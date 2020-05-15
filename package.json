@@ -23,6 +23,7 @@
   "homepage": "https://github.com/UWcse482a-2020/DNS#readme",
   "dependencies": {
     "jquery": "^3.5.1",
+    "mongodb": "^3.5.7",
     "popper.js": "^1.16.1"
   }
 }
