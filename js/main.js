@@ -60,7 +60,7 @@
 
     /*------------------
         Carousel Slider
-    --------------------*/
+    --------------------
      $(".hero-items").owlCarousel({
         loop: true,
         margin: 0,
@@ -78,7 +78,7 @@
 
     /*------------------
         Carousel Slider
-    --------------------*/
+    --------------------
     $(".logo-items").owlCarousel({
         loop: true,
 		nav: false,
@@ -104,7 +104,7 @@
 
     /*------------------
         Carousel Slider
-    --------------------*/
+    --------------------
     $(".product-slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -117,10 +117,10 @@
 
     /*------------------
         Magnific Popup
-    --------------------*/
+    --------------------
     $('.pop-up').magnificPopup({
         type: 'image'
-    });
+    });*/
 
     /*-------------------
 		Sort Select
