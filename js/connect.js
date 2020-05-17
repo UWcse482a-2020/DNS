@@ -4,7 +4,14 @@ const client = new MongoClient(url);
 
 async function run() {
     try {
-        await client.connect();
+        await client.connect(function(err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            var query = { "Type": "Switch", "sound-off": "no"};
+            dbo.collection("Products").find(query).toArray(function(err, result) {
+                if (err) throw err;
+                console.log(result);
+            });
+        });
         console.log("Connected correctly to server");
 
     } catch (err) {
