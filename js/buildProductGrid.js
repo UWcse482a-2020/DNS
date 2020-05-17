@@ -1,12 +1,11 @@
 const jquery = require('jquery')
-const dbclient = require('./connect')
 //
 $ = window.$ = window.jQuery = jquery;
 
 // incrementing variable for unique ids and parsing
 var cardNum = 0;
 
-/*const products = [
+const products = [
     {
         Name: "Yellow Maxi Dress",
         Image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
@@ -15,8 +14,7 @@ var cardNum = 0;
         Name: "One Piece Bodysuit",
         Image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
     }
-]*/
-const products = dbclient.queryDb();
+]
 
 function test() { 
     console.log("Test function working")
