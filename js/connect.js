@@ -1,25 +1,25 @@
 const { MongoClient } = require("mongodb");
 const url = "mongodb+srv://482user:Hackccess20@cluster0-me5jz.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(url);
+var resultArray = [];
 
-async function run() {
-    try {
-        await client.connect(function(err, db) {
+var methods = {
+    queryDb: function () {
+        console.log("entered queryDb")
+        client.connect(function (err, db) {
+            console.log("inside client.connect")
             var dbo = db.db("AssistiveTechLib");
-            var query = { "Type": "Switch", "sound-off": "no"};
-            dbo.collection("Products").find(query).toArray(function(err, result) {
+            var query = { "Type": "Switch" };
+            dbo.collection("Products").find(query).toArray(function (err, result) {
                 if (err) throw err;
-                console.log(result);
+                resultArray.push(result);
+                client.close();
+                //return resultArray;
             });
         });
-        console.log("Connected correctly to server");
-
-    } catch (err) {
-        console.log(err.stack);
-    }
-    finally {
-        await client.close();
+        console.log("out of client connect");
     }
 }
 
-run().catch(console.dir);
+
+module.exports = methods;
