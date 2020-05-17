@@ -7,6 +7,12 @@
     Created: Colorlib
 ---------------------------------------------------------  */
 
+import $ from "jquery";
+globalThis.jQuery = $;
+import "./jquery.slicknav"
+import "./jquery.nice-select.min"
+import "./mixitup.min"
+
 'use strict';
 
 (function ($) {

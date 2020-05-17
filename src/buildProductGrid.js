@@ -36,9 +36,6 @@ function setupCard(product, rowNum) {
     //         </div>
     //     </div>
     // </div>
-
-        console.log("setupCard start")
-
         const div_outer = document.createElement('div')
         div_outer.setAttribute('class', 'col-lg-6 col-md-6') 
 
@@ -48,6 +45,10 @@ function setupCard(product, rowNum) {
         const figure = document.createElement('figure')
 
         // TODO: Need alt text! 
+        const a_img = document.createElement('a')
+        // TODO: Need to customize product page link 
+        a_img.setAttribute('href', './product-page.html')
+
         const img = document.createElement('img')
         img.setAttribute('src', product.Image)
 
@@ -55,6 +56,7 @@ function setupCard(product, rowNum) {
         div_prodText.setAttribute('class', "product-text")
 
         const a_product = document.createElement('a')
+        // TODO: Need to customize product page link 
         a_product.setAttribute('href', "./product-page.html")
 
         const h6_product = document.createElement('h6')
@@ -62,7 +64,8 @@ function setupCard(product, rowNum) {
 
         div_outer.append(div_singleProd)
         div_singleProd.append(figure)
-        figure.append(img)
+        figure.append(a_img)
+        a_img.append(img)
         div_singleProd.append(div_prodText)
         div_prodText.append(a_product)
         a_product.append(h6_product)
