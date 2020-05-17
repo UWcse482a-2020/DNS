@@ -83,19 +83,6 @@ function setupGrid() {
 
     console.log("Outside forloop")
 
-    // let rowNum = 1
-
-    // const rowContainer1 = document.createElement('div')
-    // rowContainer1.setAttribute('class', 'col-lg-6 col-md-6')
-    // rowContainer1.setAttribute('id', 'rowContainer1' + rowNum)
-
-    // const rowContainer2 = document.createElement('div');
-    // rowContainer2.setAttribute('class', 'row')
-    // rowContainer2.setAttribute('id', 'rowContainer2' + rowNum)
-
-    // rowContainer1.append(rowContainer2)
-    // $("#productgrid").append(rowContainer1)
-
     for (let rowNum = 1; rowNum <= totalRows; rowNum++) { 
         // Append new row-div to the overarching div (id "productgrid")
         const rowContainer1 = document.createElement('div')
@@ -111,7 +98,7 @@ function setupGrid() {
 
         // Set up productsPerRow cards per row 
         // for (let rowEntryNum = 1; rowEntryNum <= entriesPerRow && cardNum < products.size; rowEntryNum++) { 
-        for (let rowEntryNum = 1; rowEntryNum < 3; rowEntryNum++) { 
+        for (let rowEntryNum = 1; rowEntryNum <= entriesPerRow && cardNum < products.length; rowEntryNum++) { 
             console.log("In entry forloop")
             setupCard(products[cardNum], rowNum)
             cardNum++;
