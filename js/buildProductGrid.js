@@ -1,6 +1,6 @@
 // incrementing variable for unique ids and parsing
 var cardNum = 0;
-const products = window.sessionStorage.getItem("queryResult");
+const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
 
 function test() { 
     console.log("Test function working")
