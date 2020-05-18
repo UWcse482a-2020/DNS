@@ -72,7 +72,7 @@ function setupProduct(product) {
     }*/
 
     // Menu Stuff
-    $('#breadcrumb').append("<h2>" + product.Type + "<span>.</span></h2>")
+    $('#breadcrumb').append("<h2>" + product.Name + "</h2>")
     $('#breadcrumb').append("<a href='#'>All Products</a>")
     $('#breadcrumb').append("<a class='active' href='#'>" + product.Type + "</a>")
 
@@ -82,10 +82,10 @@ function setupProduct(product) {
     img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
     $('#image').append(img_prodImg)
 
-    $("#title").append("<h2>" + product.Name + "</h2>")
+    // $("#title").append("<h2>" + product.Name + "</h2>")
     $("#desc").append("<p>"+ product.Notes + "</p>")
 
-    $("#category").append("<li><span> Product Type: </span>" + product.Type + "</li>")
+    $("#category").append("<span> Product Type: </span>" + product.Type)
 
     // const p_buy = document.createElement('span')
     // p_buy.innerHTML = "Purchase from a retailer: " + getProductAvailability(product.buyable)
@@ -109,7 +109,7 @@ function setupProduct(product) {
     // $("#get-info").append("<div></div>")
 
     function generateGetInfo(mode) { 
-        const span = document.createElement('span')
+        $("#get-info").append("<div style='margin-top: 0px; margin-bottom: 20px'>")
 
         const description = (mode === "buy") ? "Purchase from a retailer: " 
                             : (mode === "borrow") ? "Borrow from a partner: "
@@ -119,27 +119,32 @@ function setupProduct(product) {
                             : (mode === "borrow") ? getProductAvailability(product.borrowable)
                             : getProductAvailability(product.makable)
 
-        span.innerHTML = description + availability 
+        $("#get-info").append("<span style='font-size: 18px'>" + description + availability + "</span>")
 
-        $("#get-info").append(span)
-
-        const link = (product[mode] === "") ? "" : product[mode]
+        const redirect = (mode === "buy") ? product['buy-link']
+                            : (mode === "borrow") ? product['borrow-loc']
+                            : product['make-link']
+        const link = (redirect === "") ? "" : redirect
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
+
+
         const button = document.createElement('button')
+        button.setAttribute('class', 'btn btn--primary')
         const buttonText = (mode === "buy") ? "Link to Purchase"
                             : (mode === "borrow") ? "Link to Borrow"
                             : "Link to Make"
         button.innerHTML = buttonText
-        if (a_href === "") { 
-            button.setAttribute("disabled", "true")
+        if (link === "") {
+            button.disabled = true;
         }
+        
         a_href.append(button)
+        // a_href.append("<button class='btn btn--primary' " + buttonDisabled + ">" + buttonText + "</button>")
         
         $("#get-info").append(a_href)
 
-        const div = document.createElement("div")
-        $("#get-info").append(div)
+        $("#get-info").append("</div>")
     }
 
     generateGetInfo("buy")
@@ -151,4 +156,5 @@ function setupProduct(product) {
     }) 
 
 }
+
 setupProduct()
