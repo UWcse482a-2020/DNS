@@ -1,6 +1,7 @@
 // const jquery = require('jquery')
 // //
 // $ = window.$ = window.jQuery = jquery;
+const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
 
 function getProductAvailability(status) { 
     const caps_status = status.toUpperCase()
@@ -32,7 +33,9 @@ const validFeatures = {
 
 
 function setupProduct(product) {
-     product = {
+    var urlParams = new URLSearchParams(window.location.search);
+    product = products.find(element => element.ProductId === urlParams.get("ProductId"));
+    /*product = {
         "_id": {
             "$oid": "5ec16e50cac0241e5c1d2374"
         },
@@ -66,7 +69,7 @@ function setupProduct(product) {
         "borrow-loc": "PROVAIL",
         "makable": "",
         "make-link": ""
-    }
+    }*/
 
     // Menu Stuff
     $('#breadcrumb').append("<h2>" + product.Type + "<span>.</span></h2>")

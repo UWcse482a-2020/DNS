@@ -29,7 +29,7 @@ function setupCard(product, rowNum) {
 
     const a_img = document.createElement('a')
     a_img.setAttribute('id', 'a_img_href' + cardNum)
-    a_img.setAttribute('href', './product-page.html')
+    a_img.setAttribute('href', './product-page.html?ProductId=' + product.ProductId)
 
     const figure = document.createElement('figure')
 
@@ -43,7 +43,7 @@ function setupCard(product, rowNum) {
     const a_product = document.createElement('a')
     // TODO: Need to customize product page link 
     a_product.setAttribute('id', "a_product_href" + cardNum)
-    a_product.setAttribute('href', "./product-page.html")
+    a_product.setAttribute('href', "./product-page.html?ProductId=" + product.ProductId)
 
     const h6_product = document.createElement('h6')
     h6_product.innerHTML = product.Name
