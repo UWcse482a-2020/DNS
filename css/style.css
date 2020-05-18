@@ -1055,7 +1055,7 @@ ol {
 
 .page-add {
 	padding-top: 31px;
-	margin-bottom: 92px;
+	margin-bottom: 50px;
 }
 
 .page-add .page-breadcrumb {
@@ -1064,7 +1064,7 @@ ol {
 
 .page-add .page-breadcrumb h2 {
 	color: #1e1e1e;
-	font-size: 48px;
+	font-size: 35px;
 	font-weight: 600;
 }
 
@@ -1075,9 +1075,10 @@ ol {
 .page-add .page-breadcrumb a {
 	color: #838383;
 	display: inline-block;
-	font-size: 12px;
+	font-size: 15px;
 	font-weight: 600;
 	margin-right: 6px;
+	margin-left: 3px;
 	position: relative;
 }
 
@@ -1348,27 +1349,27 @@ ol {
 }
 
 .product-content p {
-	color: #838383;
-	font-size: 14px;
-	font-weight: 500;
+	color: #1e1e1e;
+	font-size: 18px;
+	font-weight: 400;
 	line-height: 30px;
 	margin-bottom: 35px;
 }
 
 .product-content .tags {
-	margin-bottom: 52px;
+	margin-bottom: 25px;
 }
 
 .product-content .tags li {
 	color: #1e1e1e;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 600;
 	line-height: 30px;
 	list-style: none;
 }
 
 .product-content .tags li span {
-	color: #838383;
+	color: #1e1e1e;
 }
 
 .product-content .product-quantity {
@@ -1412,17 +1413,13 @@ ol {
 .product-content .p-info {
 	margin-top: 75px;
 	/* column-count: 2; */
-	type: "disc";
 }
 
 .product-content .p-info li {
-	display: inline-block;
-	list-style: none;
 	color: #1e1e1e;
-	font-size: 14px;
-	font-weight: 300;
-	margin-right: 28px;
-	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	width: 100%;
 }
 
 /*---------------------
@@ -2096,10 +2093,10 @@ ol {
 		margin-right: 50px;
 	}
 	.product-content {
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 	.product-content .p-info {
-		margin-top: 35px;
+		margin-top: 10px;
 	}
 	.cart-btn .site-btn.update-btn {
 		margin-right: 0;
@@ -2363,4 +2360,59 @@ ol {
 	.header-info {
 		padding: 10px 0;
 	}
+}
+
+.btn {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.125rem;
+	line-height: 1.25;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 2px solid transparent;
+	padding: 1rem 1rem;
+	transition: all 0.15s ease-in-out;
+	text-decoration: none;
+	border-radius: 6px;
+	outline: none;
+	cursor: pointer;
+}
+.btn:hover, .btn:focus {
+	background: none;
+	border: solid 2px;
+	outline: none;
+}
+.btn.disabled, .btn:disabled {
+	cursor: not-allowed;
+	background-color: #f2f2f2 !important;
+	color: rgba(148, 152, 155, 0.5) !important;
+	border: solid 1px black !important;
+	box-shadow: none !important;
+}
+.btn--primary{
+	color: #fff;
+	width: 100%;
+}
+.btn--primary.btn--small{
+	padding: 0.75rem 2rem;
+	width: auto;
+}
+@media (min-width: 34em) {
+	.btn--primary{
+		min-width: 18.75rem;
+   }
+}
+.btn--primary {
+	border-color: #2e8540;
+	background-color: #2e8540;
+}
+.btn--primary:hover, .btn--primary:focus {
+	border-color: #2e8540;
+	color: #2e8540;
+	background-color: #fff;
+}
+.btn--primary:focus {
+	box-shadow: 0 0 0 0.2rem rgba(202, 19, 42, 0.5);
 }
