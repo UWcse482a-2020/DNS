@@ -41,21 +41,22 @@ function setupCard(product, rowNum) {
     const div_singleProd = document.createElement('div')
     div_singleProd.setAttribute('class', "single-product-item")
 
-    // TODO: Need alt text! 
     const a_img = document.createElement('a')
-    // TODO: Need to customize product page link 
+    a_img.setAttribute('id', 'a_img_href' + cardNum)
     a_img.setAttribute('href', './product-page.html')
 
     const figure = document.createElement('figure')
 
     const img = document.createElement('img')
     img.setAttribute('src', product.Image)
+    img.setAttribute('alt', 'Image of ' + product.Image)
 
     const div_prodText = document.createElement('div')
     div_prodText.setAttribute('class', "product-text")
 
     const a_product = document.createElement('a')
     // TODO: Need to customize product page link 
+    a_product.setAttribute('id', "a_product_href" + cardNum)
     a_product.setAttribute('href', "./product-page.html")
 
     const h6_product = document.createElement('h6')
