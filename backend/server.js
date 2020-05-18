@@ -32,6 +32,28 @@ app.get('/searchquery', (req, res) => {
   })
 })
 
+app.get('/register', (req, res) => {
+  var username = req.query['username'];
+  var email = req.query['email'];
+  var password = req.query['password'];
+  var errorCount = 0;
+  database.checkUserExists({"username": username}, function(result) {
+    if (result > 0) {
+      return res.json("Username already taken. Please try again.");
+    } else {
+      database.checkUserExists({"email": email}, function(result) {
+        if (result > 0) {
+          return res.json("Email already taken. Please try again.");
+        } else {
+          database.registerUser(req.query, function(result) {
+          })
+          return res.json("Registration Successful. Please sign in.");
+        }
+      })
+    }
+  })
+})
+
 app.use(express.static(path.resolve(__dirname, "..")))
 app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
