@@ -12,6 +12,7 @@ globalThis.jQuery = $;
 import "./jquery.slicknav"
 import "./jquery.nice-select.min"
 import "./mixitup.min"
+import "jquery-editable-select"
 
 'use strict';
 
@@ -62,7 +63,10 @@ import "./mixitup.min"
 		$('.search-model').fadeOut(400,function(){
 			$('#search-input').val('');
 		});
-	});
+    });
+    
+    /* Editable select */
+    $('#tag-select').editableSelect();
 
     /*------------------
         Carousel Slider
@@ -175,34 +179,5 @@ import "./mixitup.min"
     $(".payment-method ul li label").on('click', function () {
         $(this).toggleClass('active');
     });
-
-    /*-------------------
-		tag addition
-    --------------------- */
-    $('#tag-select').change(function(){
-        var name = $(this).val();
-        var tagList = [];
-        $("#tags li").each(function() {
-            tagList.push($(this).text());
-        });
-        if (!tagList.includes(name + "x")) {
-            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
-        }
-    });
-    $('#feature-select').change(function(){
-        var name = $(this).val();
-        var tagList = [];
-        $("#tags li").each(function() {
-            tagList.push($(this).text());
-        });
-        if (!tagList.includes(name + "x")) {
-            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
-        }
-    });
-    
-    $(document).on("click", '.close', function(){
-        $(this).parent().remove();
-    });
-    
 
 })(jQuery);
