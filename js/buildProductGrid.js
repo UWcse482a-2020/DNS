@@ -2,7 +2,6 @@
 var cardNum = 0;
 const products = window.sessionStorage.getItem("queryResult");
 
-
 function test() { 
     console.log("Test function working")
 }
