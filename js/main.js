@@ -68,11 +68,6 @@ import "jquery-editable-select"
     /* Editable select */
     $('#tag-select').editableSelect();
 
-    $("#search-btn").on("click", function() {
-        // somehow make an HTTP GET request to get the server to fetch the query
-        $.get()
-    });
-
     /*------------------
         Carousel Slider
     --------------------
@@ -184,34 +179,5 @@ import "jquery-editable-select"
     $(".payment-method ul li label").on('click', function () {
         $(this).toggleClass('active');
     });
-
-    /*-------------------
-		tag addition
-    --------------------- */
-    $('#tag-select').change(function(){
-        var name = $(this).val();
-        var tagList = [];
-        $("#tags li").each(function() {
-            tagList.push($(this).text());
-        });
-        if (!tagList.includes(name + "x")) {
-            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
-        }
-    });
-    $('#feature-select').change(function(){
-        var name = $(this).val();
-        var tagList = [];
-        $("#tags li").each(function() {
-            tagList.push($(this).text());
-        });
-        if (!tagList.includes(name + "x")) {
-            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
-        }
-    });
-    
-    $(document).on("click", '.close', function(){
-        $(this).parent().remove();
-    });
-    
 
 })(jQuery);

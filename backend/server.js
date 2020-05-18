@@ -4,8 +4,16 @@ const express = require('express')
 const database = require("./connect")
 const app = express()
 
-const entry = fs.readFileSync(
-  path.resolve(__dirname, '..', 'dist/index.html'),
+const index = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/index.html'),
+  'utf8',
+)
+const browse = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/categories.html'),
+  'utf8',
+)
+const product = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/product-page.html'),
   'utf8',
 )
 
@@ -19,6 +27,15 @@ app.get('/searchquery', (req, res) => {
   })
 })
 
-app.use('/', (req, res) => res.send(entry))
+app.use(express.static(path.resolve(__dirname, "..")))
+app.use('/categories.html', (req, res) => res.send(browse))
+app.use('/product-page.html', (req, res) => res.send(product))
+app.use('/', (req, res) => res.send(index))
 
+
+var server = app.listen(8081, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log("Example app listening at http://%s:%s", host, port)
+})
 module.exports = app

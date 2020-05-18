@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=production && node backend/server.js",
-    "dev": "set NODE_ENV=development && set PORT=5555 && node backend/dev-server.js"
+    "start": "node backend/server.js",
+    "dev": "set NODE_ENV=development && node backend/dev-server.js",
+    "parcelstart": "parcel src/index.html"
   },
   "devDependencies": {
     "@types/jquery-editable-select": "^2.2.0",
