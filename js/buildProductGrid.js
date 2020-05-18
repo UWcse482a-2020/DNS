@@ -1,16 +1,6 @@
 // incrementing variable for unique ids and parsing
 var cardNum = 0;
-
-const products = [
-    {
-        Name: "Yellow Maxi Dress",
-        Image: "../img/tempImages/AAA Battery Interrupter.jpg"
-    },
-    {
-        Name: "One Piece Bodysuit",
-        Image: "../img/tempImages/XBOX ONE Adaptive Gaming Kit.jpeg"
-    }
-]
+const products = window.sessionStorage.getItem("queryResult");
 
 function test() { 
     console.log("Test function working")
@@ -73,7 +63,7 @@ function setupCard(product, rowNum) {
 	// });
 }
 
-function setupGrid() { 
+function setupGrid() {
     var entriesPerRow = 4;
     // var totalRows = products.size % 4;
     var totalRows = 1;

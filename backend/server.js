@@ -22,7 +22,7 @@ app.get('/api/healthcheck', (req, res) => {
 })
 
 app.get('/searchquery', (req, res) => {
-  database.queryDb(function(result) {
+  database.queryDb(req.query['query'], function(result) {
     res.json(result);
   })
 })
