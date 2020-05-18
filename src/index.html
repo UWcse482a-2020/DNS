@@ -82,13 +82,53 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <select id="tag-select">
-                    <option>Alfa Romeo</option>
-                    <option>Audi</option>
-                    <option>BMW</option>
-                    <option>Citroen</option>
-                </select>
-                <button id="search-btn">Search</button>
+                <div>
+                    <p>Product Type</p>
+                    <!-- audtocomplete="off" for firefox behavior -->
+                    <select id="tag-select" autocomplete="off">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option>Toy</option>
+                        <option>Switch</option>
+                        <option>Adapter</option>
+                        <option>Computer</option>
+                        <option>Environment</option>
+                        <option>Video Game</option>
+                        <option>Mount</option>
+                    </select>
+                </div>
+                <p></p>
+                <div>
+                    <p>Features</p>
+                    <select id="feature-select" autocomplete="off">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option>sound-off</option>
+                        <option>Moves</option>
+                        <option>lights-off</option>
+                        <option>sound-loud</option>
+                        <option>lights-bright</option>
+                        <option>input-small</option>
+                        <option>touch-input</option>
+                        <option>textured</option>
+                    </select>
+                </div>
+                <p></p>
+                <!--
+                <div>
+                    <p>Voluntary Muscle Movement</p>
+                    <select id="muscle-select">
+                        <option>Arm</option>
+                    </select>
+                </div>
+                <p></p>
+                -->
+                <div>
+                    <input type="text" placeholder="Search..">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div>
+                    <ul id='tags'></ul>
+                </div>
+
             </div>
         </div>
     </div>
