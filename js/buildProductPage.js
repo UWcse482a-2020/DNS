@@ -73,7 +73,7 @@ function setupProduct(product) {
 
     // Menu Stuff
     $('#breadcrumb').append("<h2>" + product.Type + "<span>.</span></h2>")
-    $('#breadcrumb').append("<a href='#'>All Products</a>")
+    $('#breadcrumb').append("<a href='./categories.html'>All Products</a>")
     $('#breadcrumb').append("<a class='active' href='#'>" + product.Type + "</a>")
 
     // Photo stuff
