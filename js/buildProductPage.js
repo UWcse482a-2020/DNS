@@ -13,6 +13,24 @@ function getProductAvailability(status) {
     }
 }
 
+const validFeatures = {
+    "Cognitive-age": "Cognitive Age",
+    "sound-off": "Sounds can be off",
+    "sound-loud": "Sounds are loud",
+    "Moves": "Moves",
+    "lights-off": "Lights can be off",
+    "lights-bright": "Lights bright or pulsating",
+    "av-alt": "Audio/Visual output alternatives",
+    "input-small": "Input features are small",
+    "input-difficult": "Input features hard to manipulate/press",
+    "touch-input": "Touch input features",
+    "textured": "Has textural differences",
+    "switch-acc": "Accessible by ability switches",
+    "eye-acc": "Acessible by eye-tracking devices",
+    "accessible by voice interface?": "Accessible by voice-interface",
+}
+
+
 function setupProduct(product) {
      product = {
         "_id": {
@@ -90,6 +108,17 @@ function setupProduct(product) {
     p_make.innerHTML = "Make from instructions: " + getProductAvailability(product.makable)
 
 
+    // Features
+    const ul_features = document.createElement('ul')
+    ul_features.setAttribute('class', 'p-info')
+    ul_features.setAttribute('id', '1')
+    Object.keys(validFeatures).forEach(function(key) {
+        console.log(validFeatures[key])
+        // $("#features-product").append("<li>" + validFeatures[key] + ": " + product.key + "</li>")
+        $("#1").append("<li>" + 1 + "</li>")
+    }) 
+
+
     // Photo stuff
     div_prodImgOuter.append(div_prodImg)
     div_prodImg.append(img_prodImg)
@@ -109,6 +138,8 @@ function setupProduct(product) {
     div_prodContent.append(p_buy)
     div_prodContent.append(p_borrow)
     div_prodContent.append(p_make)
+
+    div_prodContent.append(ul_features)
 
     $('#product-row').append(div_prodContentOuter)
 
