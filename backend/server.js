@@ -46,7 +46,6 @@ app.get('/register', (req, res) => {
           return res.json("Email already taken. Please try again.");
         } else {
           database.registerUser(req.query, function(result) {
-            
           })
           return res.json("Registration Successful. Please sign in.");
         }
