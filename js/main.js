@@ -12,6 +12,7 @@ globalThis.jQuery = $;
 import "./jquery.slicknav"
 import "./jquery.nice-select.min"
 import "./mixitup.min"
+import "jquery-editable-select"
 
 'use strict';
 
@@ -62,7 +63,15 @@ import "./mixitup.min"
 		$('.search-model').fadeOut(400,function(){
 			$('#search-input').val('');
 		});
-	});
+    });
+    
+    /* Editable select */
+    $('#tag-select').editableSelect();
+
+    $("#search-btn").on("click", function() {
+        // somehow make an HTTP GET request to get the server to fetch the query
+        $.get()
+    });
 
     /*------------------
         Carousel Slider
