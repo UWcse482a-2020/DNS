@@ -17,6 +17,11 @@ const product = fs.readFileSync(
   'utf8',
 )
 
+const contact = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/contact.html'),
+  'utf8',
+)
+
 app.get('/api/healthcheck', (req, res) => {
   return res.send('Healthy!')
 })
@@ -30,6 +35,7 @@ app.get('/searchquery', (req, res) => {
 app.use(express.static(path.resolve(__dirname, "..")))
 app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
+app.use('/contact.html', (req, res) => res.send(contact))
 app.use('/', (req, res) => res.send(index))
 
 
