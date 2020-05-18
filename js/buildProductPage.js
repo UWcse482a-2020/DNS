@@ -108,10 +108,6 @@ function setupProduct(product) {
     // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Make</button></a>")
     // $("#get-info").append("<div></div>")
 
-    generateGetInfo("buy")
-    generateGetInfo("borrow")
-    generateGetInfo("make")
-
     function generateGetInfo(mode) { 
         const span = document.createElement('span')
 
@@ -130,12 +126,14 @@ function setupProduct(product) {
         const link = (product[mode] === "") ? "" : product[mode]
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
-
         const button = document.createElement('button')
         const buttonText = (mode === "buy") ? "Link to Purchase"
                             : (mode === "borrow") ? "Link to Borrow"
                             : "Link to Make"
         button.innerHTML = buttonText
+        if (a_href === "") { 
+            button.setAttribute("disabled", "true")
+        }
         a_href.append(button)
         
         $("#get-info").append(a_href)
@@ -143,6 +141,10 @@ function setupProduct(product) {
         const div = document.createElement("div")
         $("#get-info").append(div)
     }
+
+    generateGetInfo("buy")
+    generateGetInfo("borrow")
+    generateGetInfo("make")
 
     Object.keys(validFeatures).forEach(function(key) {
         $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
