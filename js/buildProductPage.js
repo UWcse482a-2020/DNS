@@ -111,13 +111,16 @@ function setupProduct(product) {
     // Features
     const ul_features = document.createElement('ul')
     ul_features.setAttribute('class', 'p-info')
-    ul_features.setAttribute('id', '1')
+    ul_features.setAttribute('id', 'features-product')
     Object.keys(validFeatures).forEach(function(key) {
         console.log(validFeatures[key])
-        // $("#features-product").append("<li>" + validFeatures[key] + ": " + product.key + "</li>")
-        $("#1").append("<li>" + 1 + "</li>")
+        // $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
+        const li = document.createElement('li')
+        li.innerHTML = validFeatures[key] + ": " + product[key]
+        ul_features.append(li)
     }) 
 
+    ////////////////////////////////////////
 
     // Photo stuff
     div_prodImgOuter.append(div_prodImg)
@@ -132,8 +135,6 @@ function setupProduct(product) {
 
     div_prodContent.append(ul_prodType)
     ul_prodType.append(li_prodType)
-    // li_prodType.append(span_prodType)
-    // li_prodType.innerHTML = "" + product.Type
 
     div_prodContent.append(p_buy)
     div_prodContent.append(p_borrow)

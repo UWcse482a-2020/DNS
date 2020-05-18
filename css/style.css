@@ -1411,6 +1411,8 @@ ol {
 
 .product-content .p-info {
 	margin-top: 75px;
+	/* column-count: 2; */
+	type: "disc"
 }
 
 .product-content .p-info li {
@@ -1418,7 +1420,7 @@ ol {
 	list-style: none;
 	color: #1e1e1e;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 300;
 	margin-right: 28px;
 	cursor: pointer;
 }
