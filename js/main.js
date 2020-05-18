@@ -185,4 +185,33 @@ import "jquery-editable-select"
         $(this).toggleClass('active');
     });
 
+    /*-------------------
+		tag addition
+    --------------------- */
+    $('#tag-select').change(function(){
+        var name = $(this).val();
+        var tagList = [];
+        $("#tags li").each(function() {
+            tagList.push($(this).text());
+        });
+        if (!tagList.includes(name + "x")) {
+            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
+        }
+    });
+    $('#feature-select').change(function(){
+        var name = $(this).val();
+        var tagList = [];
+        $("#tags li").each(function() {
+            tagList.push($(this).text());
+        });
+        if (!tagList.includes(name + "x")) {
+            $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
+        }
+    });
+    
+    $(document).on("click", '.close', function(){
+        $(this).parent().remove();
+    });
+    
+
 })(jQuery);
