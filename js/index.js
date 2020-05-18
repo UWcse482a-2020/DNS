@@ -2,9 +2,29 @@
 
 document.getElementById("search-btn").addEventListener("click", searchButtonClick);
 function searchButtonClick() {
-    $.get("/searchquery", function (data) {
+    $.get("/searchquery", $.param(getQueryString()), function (data) {
         console.log(data);
-    })
+        window.sessionStorage.clear();
+        window.sessionStorage.setItem("queryResult", JSON.stringify(data));
+        window.location.href = "categories.html";
+    })    
+}
+
+function getQueryString() {
+    var queryString = {};
+    $("#tags li").each(function() {
+        let tagText = $(this).text();
+        let content = tagText.substr(0, tagText.length - 1);
+        if ($(this).hasClass('device-type')) {
+            queryString["Type"] = content;
+        } else {
+            queryString[content] = "yes";
+        }
+    });
+    var Q = {
+        query: queryString
+    };
+    return Q;
 }
 
 /*-------------------
@@ -17,7 +37,7 @@ $('#tag-select').change(function () {
         tagList.push($(this).text());
     });
     if (!tagList.includes(name + "x")) {
-        $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
+        $("#tags").append("<li class='device-type'>" + name + "<span class='close'>x</span></li>");
     }
 });
 $('#feature-select').change(function () {
@@ -27,7 +47,7 @@ $('#feature-select').change(function () {
         tagList.push($(this).text());
     });
     if (!tagList.includes(name + "x")) {
-        $("#tags").append("<li>" + name + "<span class='close'>x</span></li>");
+        $("#tags").append("<li class='feature'>" + name + "<span class='close'>x</span></li>");
     }
 });
 

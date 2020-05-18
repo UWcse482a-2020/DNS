@@ -1,20 +1,7 @@
-const jquery = require('jquery')
-//
-$ = window.$ = window.jQuery = jquery;
-
 // incrementing variable for unique ids and parsing
 var cardNum = 0;
+const products = window.sessionStorage.getItem("queryResult");
 
-const products = [
-    {
-        Name: "Yellow Maxi Dress",
-        Image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-    },
-    {
-        Name: "One Piece Bodysuit",
-        Image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-    }
-]
 
 function test() { 
     console.log("Test function working")
@@ -77,7 +64,7 @@ function setupCard(product, rowNum) {
 	// });
 }
 
-function setupGrid() { 
+function setupGrid() {
     var entriesPerRow = 4;
     // var totalRows = products.size % 4;
     var totalRows = 1;
