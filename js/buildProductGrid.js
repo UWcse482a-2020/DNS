@@ -4,7 +4,7 @@ var cardNum = 0;
 const products = [
     {
         Name: "Yellow Maxi Dress",
-        Image: "../img/tempImages/Xbox Adaptive Controller.jpg"
+        Image: "../img/tempImages/AAA Battery Interrupter.jpg"
     },
     {
         Name: "One Piece Bodysuit",

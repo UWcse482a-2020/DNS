@@ -39,7 +39,7 @@ function setupProduct(product) {
         "ProductId": "1",
         "Name": "AAA Battery Interrupter",
         "Inventory": "LL-AD1001",
-        "Image": "https://drive.google.com/open?id=1S9KhrRS7xFmE94deQKfhIzK4GaJHasuH",
+        "Image": "../img/tempImages/AAA Battery Interrupter.jpg",
         "Link": "https://drive.google.com/a/provail.org/file/d/1rHYeMLlbI37WcK4fUENUwM5SAJpctcvC/view?usp=sharing",
         "Type": "Adapter",
         "Availability": "Available",
@@ -68,81 +68,82 @@ function setupProduct(product) {
         "make-link": ""
     }
 
-    const div_prodImgOuter = document.createElement('div')
-    div_prodImgOuter.setAttribute('class', 'col-lg-6')
-    const div_prodImg = document.createElement('div')
-    div_prodImg.setAttribute('class', 'product-img')
-    const img_prodImg = document.createElement('div')
-    img_prodImg.setAttribute('src', product.Image)
-    img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
-
-    const div_prodContentOuter = document.createElement('div')
-    div_prodContentOuter.setAttribute('class', 'col-lg-6')
-    const div_prodContent = document.createElement('div')
-    div_prodContent.setAttribute('class', 'product-content')
-
-    const h2_title = document.createElement('h2')
-    h2_title.innerHTML = product.Name
-
-    const p_desc = document.createElement('p')
-    p_desc.innerHTML = product.Notes
-
-    const ul_prodType = document.createElement('ul')
-    ul_prodType.setAttribute('class', 'tags')
-    const li_prodType = document.createElement('li')
-    li_prodType.setAttribute('id', "li_prodType" + product.ProductId)
-    li_prodType.innerHTML = "Product Type: " + product.Type
-    // $("#li_prodType" + product.ProductId).append("<span>Product Type:</span>" + product.Type)
-    // const span_prodType = document.createElement('span')
-    // span_prodType.innerHTML = "Product Type: "
-
-    // const str_productType = "<ul class='tags'><li><span>Product Type:</span>" + product.Type + "</li></ul>"
-
-    const p_buy = document.createElement('p')
-    p_buy.innerHTML = "Purchase from a retailer: " + getProductAvailability(product.buyable)
-    const p_borrow = document.createElement('p')
-    p_borrow.innerHTML = "Borrow from a partner: " + getProductAvailability(product.borrowable)
-    const p_make = document.createElement('p')
-    p_make.innerHTML = "Make from instructions: " + getProductAvailability(product.makable)
-
-
-    // Features
-    const ul_features = document.createElement('ul')
-    ul_features.setAttribute('class', 'p-info')
-    ul_features.setAttribute('id', 'features-product')
-
-
-    ////////////////////////////////////////
+    // Menu Stuff
+    $('#breadcrumb').append("<h2>" + product.Type + "<span>.</span></h2>")
+    $('#breadcrumb').append("<a href='#'>All Products</a>")
+    $('#breadcrumb').append("<a class='active' href='#'>" + product.Type + "</a>")
 
     // Photo stuff
-    div_prodImgOuter.append(div_prodImg)
-    div_prodImg.append(img_prodImg)
-    $('#product-row').append(div_prodImgOuter)
+    const img_prodImg = document.createElement('img')
+    img_prodImg.setAttribute('src', product.Image)
+    img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
+    $('#image').append(img_prodImg)
 
-    // Content stuff
+    $("#title").append("<h2>" + product.Name + "</h2>")
+    $("#desc").append("<p>"+ product.Notes + "</p>")
 
-    // div_prodContentOuter.append(div_prodContent)
-    $("#content").append(h2_title)
-    $("#content").append(p_desc)
+    $("#category").append("<li><span> Product Type: </span>" + product.Type + "</li>")
 
-    $("#content").append(ul_prodType)
-    ul_prodType.append(li_prodType)
+    // const p_buy = document.createElement('span')
+    // p_buy.innerHTML = "Purchase from a retailer: " + getProductAvailability(product.buyable)
 
-    $("#content").append(p_buy)
-    $("#content").append(p_borrow)
-    $("#content").append(p_make)
+    // const p_borrow = document.createElement('span')
+    // p_borrow.innerHTML = "Borrow from a partner: " + getProductAvailability(product.borrowable)
+
+    // const p_make = document.createElement('span')
+    // p_make.innerHTML = "Make from instructions: " + getProductAvailability(product.makable)
+
+    // $("#get-info").append(p_buy)
+    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Purchase</button></a>")
+    // $("#get-info").append("<div></div>")
+
+    // $("#get-info").append(p_borrow)
+    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Borrow</button></a>")
+    // $("#get-info").append("<div></div>")
+
+    // $("#get-info").append(p_make)
+    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Make</button></a>")
+    // $("#get-info").append("<div></div>")
+
+    generateGetInfo("buy")
+    generateGetInfo("borrow")
+    generateGetInfo("make")
+
+    function generateGetInfo(mode) { 
+        const span = document.createElement('span')
+
+        const description = (mode === "buy") ? "Purchase from a retailer: " 
+                            : (mode === "borrow") ? "Borrow from a partner: "
+                            : "Make from instructions: "
+
+        const availability = (mode === "buy") ? getProductAvailability(product.buyable)
+                            : (mode === "borrow") ? getProductAvailability(product.borrowable)
+                            : getProductAvailability(product.makable)
+
+        span.innerHTML = description + availability 
+
+        $("#get-info").append(span)
+
+        const link = (product[mode] === "") ? "" : product[mode]
+        const a_href = document.createElement('a')
+        a_href.setAttribute('href', link)
+
+        const button = document.createElement('button')
+        const buttonText = (mode === "buy") ? "Link to Purchase"
+                            : (mode === "borrow") ? "Link to Borrow"
+                            : "Link to Make"
+        button.innerHTML = buttonText
+        a_href.append(button)
+        
+        $("#get-info").append(a_href)
+
+        const div = document.createElement("div")
+        $("#get-info").append(div)
+    }
 
     Object.keys(validFeatures).forEach(function(key) {
-        // $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
-        var li = document.createElement('li')
-        li.innerHTML = validFeatures[key] + ": " + product[key]
-        ul_features.append(li)
+        $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
     }) 
-
-    $("#content").append(ul_features)
-
-    $('#product-row').append(div_prodContentOuter)
-
 
 }
 setupProduct()
