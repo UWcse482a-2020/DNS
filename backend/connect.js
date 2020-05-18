@@ -35,6 +35,19 @@ var methods = {
                 console.log("user insert")
             });
         });
+    },
+
+    loginUser: function (query, callback) {
+        console.log("entered queryDb")
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            return dbo.collection("Users").insert(query, function (err, result) {
+                if (err) throw err;
+                console.log("user insert")
+            });
+        });
     }
+
+
 }
 module.exports = methods;

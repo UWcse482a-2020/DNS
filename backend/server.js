@@ -17,8 +17,13 @@ const product = fs.readFileSync(
   'utf8',
 )
 
-const contact = fs.readFileSync(
-  path.resolve(__dirname, '..', 'src/contact.html'),
+const register = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/register.html'),
+  'utf8',
+)
+
+const login = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/login.html'),
   'utf8',
 )
 
@@ -57,7 +62,8 @@ app.get('/register', (req, res) => {
 app.use(express.static(path.resolve(__dirname, "..")))
 app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
-app.use('/contact.html', (req, res) => res.send(contact))
+app.use('/register.html', (req, res) => res.send(register))
+app.use('/login.html', (req, res) => res.send(login))
 app.use('/', (req, res) => res.send(index))
 
 
