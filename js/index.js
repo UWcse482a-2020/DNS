@@ -4,7 +4,7 @@ document.getElementById("search-btn").addEventListener("click", searchButtonClic
 function searchButtonClick() {
     $.get("/searchquery", $.param(getQueryString()), function (data) {
         console.log(data);
-        window.sessionStorage.clear();
+        window.sessionStorage.removeItem("queryResult");
         window.sessionStorage.setItem("queryResult", JSON.stringify(data));
         window.location.href = "categories.html";
     })    

@@ -32,6 +32,10 @@ app.get('/searchquery', (req, res) => {
   })
 })
 
+app.post('/register', (req, res) => {
+  return res.send('Healthy!')
+})
+
 app.use(express.static(path.resolve(__dirname, "..")))
 app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
