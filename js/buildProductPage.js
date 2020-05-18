@@ -1,6 +1,6 @@
-const jquery = require('jquery')
-//
-$ = window.$ = window.jQuery = jquery;
+// const jquery = require('jquery')
+// //
+// $ = window.$ = window.jQuery = jquery;
 
 function getProductAvailability(status) { 
     const caps_status = status.toUpperCase()
@@ -68,8 +68,6 @@ function setupProduct(product) {
         "make-link": ""
     }
 
-    console.log("Inside setupProduct")
-
     const div_prodImgOuter = document.createElement('div')
     div_prodImgOuter.setAttribute('class', 'col-lg-6')
     const div_prodImg = document.createElement('div')
@@ -112,13 +110,7 @@ function setupProduct(product) {
     const ul_features = document.createElement('ul')
     ul_features.setAttribute('class', 'p-info')
     ul_features.setAttribute('id', 'features-product')
-    Object.keys(validFeatures).forEach(function(key) {
-        console.log(validFeatures[key])
-        // $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
-        const li = document.createElement('li')
-        li.innerHTML = validFeatures[key] + ": " + product[key]
-        ul_features.append(li)
-    }) 
+
 
     ////////////////////////////////////////
 
@@ -129,44 +121,28 @@ function setupProduct(product) {
 
     // Content stuff
 
-    div_prodContentOuter.append(div_prodContent)
-    div_prodContent.append(h2_title)
-    div_prodContent.append(p_desc)
+    // div_prodContentOuter.append(div_prodContent)
+    $("#content").append(h2_title)
+    $("#content").append(p_desc)
 
-    div_prodContent.append(ul_prodType)
+    $("#content").append(ul_prodType)
     ul_prodType.append(li_prodType)
 
-    div_prodContent.append(p_buy)
-    div_prodContent.append(p_borrow)
-    div_prodContent.append(p_make)
+    $("#content").append(p_buy)
+    $("#content").append(p_borrow)
+    $("#content").append(p_make)
 
-    div_prodContent.append(ul_features)
+    Object.keys(validFeatures).forEach(function(key) {
+        // $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
+        var li = document.createElement('li')
+        li.innerHTML = validFeatures[key] + ": " + product[key]
+        ul_features.append(li)
+    }) 
+
+    $("#content").append(ul_features)
 
     $('#product-row').append(div_prodContentOuter)
 
-    console.log("End setupProduct")
+
 }
-
-// function setupGrid() { 
-//     var entriesPerRow = 4;
-//     // var totalRows = products.size % 4;
-//     var totalRows = 1;
-
-//     console.log("Outside forloop")
-
-//     for (let rowNum = 1; rowNum <= totalRows; rowNum++) { 
-//         // Append new row-div to the overarching div (id "productgrid")
-//         const rowContainer1 = document.createElement('div')
-//         rowContainer1.setAttribute('class', 'col-lg-6 col-md-6')
-//         rowContainer1.setAttribute('id', 'rowContainer1' + rowNum)
-
-//         const rowContainer2 = document.createElement('div');
-//         rowContainer2.setAttribute('class', 'row')
-//         rowContainer2.setAttribute('id', 'rowContainer2' + rowNum)
-
-//         rowContainer1.append(rowContainer2)
-//         $("#productgrid").append(rowContainer1)
-//     }
-// }
-
 setupProduct()
