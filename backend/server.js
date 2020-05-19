@@ -17,8 +17,13 @@ const product = fs.readFileSync(
   'utf8',
 )
 
-const contact = fs.readFileSync(
-  path.resolve(__dirname, '..', 'src/contact.html'),
+const register = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/register.html'),
+  'utf8',
+)
+
+const login = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/login.html'),
   'utf8',
 )
 
@@ -32,14 +37,46 @@ app.get('/searchquery', (req, res) => {
   })
 })
 
-app.post('/register', (req, res) => {
-  return res.send('Healthy!')
+app.get('/register', (req, res) => {
+  var username = req.query['username'];
+  var email = req.query['email'];
+  var password = req.query['password'];
+  database.checkUserExists({"username": username}, function(result) {
+    if (result > 0) {
+      return res.json("Username already taken. Please try again.");
+    } else {
+      database.checkUserExists({"email": email}, function(result) {
+        if (result > 0) {
+          return res.json("Email already taken. Please try again.");
+        } else {
+          database.registerUser(req.query, function(result) {
+          })
+          return res.json("Registration Successful. Please sign in.");
+        }
+      })
+    }
+  })
+})
+
+app.get('/login', (req, res) => {
+  var username = req.query['username'];
+  var password = req.query['password'];
+  database.checkUserExists({"username": username}, function(result) {
+    if (result == 0) {
+      return res.json("User does not exist.");
+    } else {
+      database.loginUser(req.query, function(result) {
+      })
+      return res.json("Log in Successful");
+    }
+  })
 })
 
 app.use(express.static(path.resolve(__dirname, "..")))
 app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
-app.use('/contact.html', (req, res) => res.send(contact))
+app.use('/register.html', (req, res) => res.send(register))
+app.use('/login.html', (req, res) => res.send(login))
 app.use('/', (req, res) => res.send(index))
 
 

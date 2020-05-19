@@ -13,6 +13,41 @@ var methods = {
                 return callback(result);
             });
         });
+    },
+
+    checkUserExists: function (query, callback) {
+        console.log("entered queryDb")
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            return dbo.collection("Users").count(query, function (err, result) {
+                if (err) throw err;
+                return callback(result);
+            });
+        });
+    },
+
+    registerUser: function (query, callback) {
+        console.log("entered queryDb")
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            return dbo.collection("Users").insert(query, function (err, result) {
+                if (err) throw err;
+                console.log("user insert")
+            });
+        });
+    },
+
+    loginUser: function (query, callback) {
+        console.log("entered queryDb")
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            return dbo.collection("User").find(query).toArray(function (err, result) {
+                if (err) throw err;
+                return callback(result);
+            });
+        });
     }
+
+
 }
 module.exports = methods;

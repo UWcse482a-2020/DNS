@@ -5,7 +5,7 @@ function register(info) {
         password: info.password.value
     }
     console.log(registerInfo);
-    $.post("/register", $.param(registerInfo), function (data) {
-        $('#registerError').text("You have registered successfully")
+    $.get("/register", $.param(registerInfo), function (data) {
+        $('#registerError').text(data);
     })
 }

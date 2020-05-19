@@ -1,5 +1,18 @@
 // JS specific to index.html
 
+$(document).ready(function() {
+    // check if user is logged in
+    if(window.sessionStorage.getItem("loggedIn") = true) {
+        console.log("logged in user detected");
+        window.sessionStorage.getItem("Default_tags").forEach(function(item, index) {
+            console.log("added to tag column");
+            $("#tags").append("<li class='device-type'>" + item + "<span class='close'>x</span></li>");
+        });
+    } else {
+        console.log("this doesn't work");
+    }
+});
+
 document.getElementById("search-btn").addEventListener("click", searchButtonClick);
 function searchButtonClick() {
     $.get("/searchquery", $.param(getQueryString()), function (data) {
