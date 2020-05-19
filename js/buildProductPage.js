@@ -71,7 +71,7 @@ function setupProduct(product) {
     // Menu Stuff
     $('#breadcrumb').append("<h2>" + product.Name + "</h2>")
     $('#breadcrumb').append("<a href='#'>All Products</a>")
-    $('#breadcrumb').append("<a class='active' href='#'>" + product.Type + "</a>")
+    $('#breadcrumb').append("<a class='active' href='./categories.html'>" + product.Type + "</a>")
 
     // Photo stuff
     const img_prodImg = document.createElement('img')
