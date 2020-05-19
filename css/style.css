@@ -85,6 +85,15 @@ p {
 	margin: 0 0 15px 0;
 }
 
+.p-header {
+	font-size: 20px;
+	color: #1e1e1e;
+	font-weight: 500;
+	line-height: 1.6;
+	font-family: "Montserrat", sans-serif;
+	margin: 0 0 15px 0;
+}
+
 img {
 	max-width: 100%;
 }
@@ -273,7 +282,7 @@ ol {
 
 .inner-header .header-right {
 	float: right;
-	line-height: 30px;
+	line-height: 50px;
 }
 
 .inner-header .header-right img {
@@ -316,15 +325,15 @@ ol {
 
 .inner-header .user-access a {
 	color: #1e1e1e;
-	font-size: 16px;
+	font-size: 20px;
 	display: inline-block;
 	font-weight: 500;
 	position: relative;
-	line-height: 42px;
+	line-height: 50px;
 }
 
 .inner-header .user-access a.in {
-	color: #838383;
+	color: #1e1e1e;
 	margin-left: 15px;
 	position: relative;
 }
@@ -350,11 +359,11 @@ ol {
 
 .inner-header .main-menu ul li a {
 	color: #1e1e1e;
-	font-size: 16px;
+	font-size: 20px;
 	display: inline-block;
 	font-weight: 500;
 	position: relative;
-	line-height: 42px;
+	line-height: 50px;
 }
 
 .inner-header .main-menu ul li a.active:after {
@@ -413,7 +422,7 @@ ol {
 	color: #000;
 	margin-right: 0;
 	padding: 0px 20px;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 2.3;
 }
 
