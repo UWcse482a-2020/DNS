@@ -40,7 +40,7 @@ function setupCard(product, cardNum) {
     
 }
 
-function setupGrid() {
+function buildTitleAndBreadcrumb() {
     var readableQuery = "";
     var hasType = false;
     var isBrowseAll = false;
@@ -63,19 +63,27 @@ function setupGrid() {
         }
     }
     
-    $('.page-breadcrumb').append("<h2> Search Results for \"" + readableQuery + "\"</h2>")
+    $('.page-breadcrumb').append("<h2 class=\"col-lg-10\"> " + products.length + " Search Results for \"" + readableQuery + "\"</h2>")
     if (!isBrowseAll) {
-        $('.page-breadcrumb').append("<a href='#'>All Products</a>")
+        $('.page-breadcrumb').append("<a href='#'>All Products / </a>")
     }
     if (hasType) {
         $('.page-breadcrumb').append("<a class='active' href='./categories.html'>" + userQuery.Type + "</a>")
     }
-    
-    
-    for (let cardNum = 0; cardNum < products.length; cardNum++) { 
-        setupCard(products[cardNum], cardNum)
-    }
-
 }
 
+function setupGrid() {
+    if (products.length == 0) {
+        const h5_text = document.createElement('h5')
+        h5_text.innerHTML = "No matching products were found. Please try a different search"
+        $("#productgrid").append(h5_text);
+        $('#goback').append("<a href=\"./index.html\" class=\"primary-btn\">Search Again</a>")
+    } else {
+        for (let cardNum = 0; cardNum < products.length; cardNum++) { 
+            setupCard(products[cardNum], cardNum)
+        }
+    }
+}
+
+buildTitleAndBreadcrumb()
 setupGrid()

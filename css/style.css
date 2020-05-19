@@ -1099,12 +1099,12 @@ ol {
 	display: none;
 }
 
-.page-add .page-breadcrumb a:after {
+/* .page-add .page-breadcrumb a:after {
 	position: absolute;
 	top: 1px;
 	right: -5px;
-	content: "/";
-}
+	content: " >";
+} */
 
 /*---------------------
   Categories Page
