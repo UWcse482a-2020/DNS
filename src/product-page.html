@@ -152,7 +152,43 @@
                             </ul>
                         </div>
 
-                            
+                        <!-- Temporary Comments Section -->
+                        <div id='features-div' style='margin-top: 20px; margin-bottom:20px'>
+                            <h4>
+                                <u>User Reviews</u>
+                            </h4>
+                        </div>
+
+                        <div class="comment">
+                            <div style="    border: 1px solid #8bc34a; box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);">
+                                <textarea class="form-control" id="title" onkeyup="Allow()" rows="3"
+                                    placeholder="Leave a comment here..."></textarea>
+                            </div>
+
+                            <input type="submit" value="Post" onclick="insert()" style="width:100%;" /></form>
+                        </div>
+                        <div id="display"></div>
+                        <script type="text/javascript">
+                            var titles = [];
+                            var titleInput = document.getElementById("title");
+                            var messageBox = document.getElementById("display");
+                            function Allow() {
+                                if (!user.title.value.match(/[a-zA-Z]$/) && user.title.value != "") {
+                                    user.title.value = "";
+                                    alert("Please Enter only alphabets");
+                                }
+                                window.location.reload()
+                            }
+                            function insert() {
+                                titles.push(titleInput.value);
+                                clearAndShow();
+                            }
+                            function clearAndShow() {
+                                titleInput.value = "";
+                                messageBox.innerHTML = "";
+                                messageBox.innerHTML += " " + titles.join("<br/> ") + "<br/>";
+                            }
+                        </script>
 
                         <!-- <h2>Dotted Blue Shirt</h2>
                         <div class="pc-meta">
@@ -190,10 +226,12 @@
                         </ul> -->
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
     <!-- Product Page Section End -->
+    
 
     <!-- Related Product Section Begin -->
     <section class="related-product spad">
