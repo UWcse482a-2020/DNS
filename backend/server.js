@@ -27,6 +27,11 @@ const login = fs.readFileSync(
   'utf8',
 )
 
+const profile = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/profile.html'),
+  'utf8',
+)
+
 app.get('/api/healthcheck', (req, res) => {
   return res.send('Healthy!')
 })
@@ -77,6 +82,7 @@ app.use('/categories.html', (req, res) => res.send(browse))
 app.use('/product-page.html', (req, res) => res.send(product))
 app.use('/register.html', (req, res) => res.send(register))
 app.use('/login.html', (req, res) => res.send(login))
+app.use('/profile.html', (req, res) => res.send(profile))
 app.use('/', (req, res) => res.send(index))
 
 

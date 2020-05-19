@@ -1,3 +1,12 @@
+
+$(document).ready(function() {
+    // check if user is logged in
+    if(window.sessionStorage.getItem("justRegistered") == "true") {
+        window.sessionStorage.removeItem("justRegistered");
+        $('#loginError').text("Registered Successfully. Please Sign In.");
+    }
+});
+
 function login(info) {
     var loginInfo = {
         username: info.username.value,
@@ -10,7 +19,7 @@ function login(info) {
             window.sessionStorage.setItem("loggedIn", "true");
             window.sessionStorage.setItem("username", loginInfo.username);
             window.sessionStorage.removeItem("Default_tags");
-            var tags = ["Toy", "Switch"]
+            var tags = ["Toy", "textured"]
             window.sessionStorage.setItem("Default_tags", JSON.stringify(tags));
             window.location.href = "index.html";
         }

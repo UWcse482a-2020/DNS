@@ -9,6 +9,14 @@
 
 //import "jquery-editable-select"
 
+$(document).ready(function() {
+    // check if user is logged in
+    if(window.sessionStorage.getItem("loggedIn") == "true") {
+        $('.user-access').empty();
+        $('.user-access').append("<a href='./profile.html' tabindex='0'>Profile</a>");
+    }
+});
+
 'use strict';
 document.getElementById("browse-all").addEventListener('click', function() {
     var Q = {
