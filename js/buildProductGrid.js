@@ -1,19 +1,6 @@
 const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
 
 function setupCard(product, cardNum) {
-    // <div class="col-lg-6 col-md-6">
-    //     <div class="single-product-item">
-    //         <a href="./product-page.html">
-    //             <figure>
-    //                 <img alt="W3Schools" src="../img/products/img-2.jpg">
-    //             </figure>
-    //         </a>
-    //         <div class="product-text">
-    //             <a href="./product-page.html"><h6>Yellow Maxi Dress</h6></a>  
-    //             <p>$25.90</p>
-    //         </div>
-    //     </div>
-    // </div>
 
     const div_singleProd = document.createElement('div')
     div_singleProd.setAttribute('class', "single-product-item")

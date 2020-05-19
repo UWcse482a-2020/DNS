@@ -1,6 +1,3 @@
-// const jquery = require('jquery')
-// //
-// $ = window.$ = window.jQuery = jquery;
 const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
 
 function getProductAvailability(status) { 
@@ -87,27 +84,6 @@ function setupProduct(product) {
 
     $("#category").append("<span> Product Type: </span>" + product.Type)
 
-    // const p_buy = document.createElement('span')
-    // p_buy.innerHTML = "Purchase from a retailer: " + getProductAvailability(product.buyable)
-
-    // const p_borrow = document.createElement('span')
-    // p_borrow.innerHTML = "Borrow from a partner: " + getProductAvailability(product.borrowable)
-
-    // const p_make = document.createElement('span')
-    // p_make.innerHTML = "Make from instructions: " + getProductAvailability(product.makable)
-
-    // $("#get-info").append(p_buy)
-    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Purchase</button></a>")
-    // $("#get-info").append("<div></div>")
-
-    // $("#get-info").append(p_borrow)
-    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Borrow</button></a>")
-    // $("#get-info").append("<div></div>")
-
-    // $("#get-info").append(p_make)
-    // $("#get-info").append("<a href=" + "http://stackoverflow.com" + "> <button style='margin-left:50px, border-radius:12px'>Link to Make</button></a>")
-    // $("#get-info").append("<div></div>")
-
     function generateGetInfo(mode) { 
         $("#get-info").append("<div style='margin-top: 0px; margin-bottom: 20px'>")
 
@@ -140,7 +116,6 @@ function setupProduct(product) {
         }
         
         a_href.append(button)
-        // a_href.append("<button class='btn btn--primary' " + buttonDisabled + ">" + buttonText + "</button>")
         
         $("#get-info").append(a_href)
 
