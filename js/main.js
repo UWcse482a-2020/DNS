@@ -7,12 +7,24 @@
     Created: Colorlib
 ---------------------------------------------------------  */
 
-import "jquery-editable-select"
+//import "jquery-editable-select"
 
 'use strict';
+document.getElementById("browse-all").addEventListener('click', function() {
+    var Q = {
+        query: '{}'
+    };
+    $.get("/searchquery", $.param(Q), function (data) {
+        //console.log(data);
+        window.sessionStorage.removeItem("queryResult");
+        window.sessionStorage.setItem("queryResult", JSON.stringify(data));
+        window.sessionStorage.removeItem("userQuery");
+        window.sessionStorage.setItem("userQuery", JSON.stringify(Q));
+        window.location.href = "categories.html";
+    });
+})
 
 (function ($) {
-
     /*------------------
         Preloader
     --------------------*/
