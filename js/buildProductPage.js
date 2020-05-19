@@ -69,20 +69,21 @@ function setupProduct(product) {
     }*/
 
     // Menu Stuff
-    $('#breadcrumb').append("<h2>" + product.Name + "</h2>")
-    $('#breadcrumb').append("<a href='#'>All Products / </a>")
-    $('#breadcrumb').append("<a class='active' href='./categories.html'>" + product.Type + "</a>")
+    $('#breadcrumb').append("<h2 tabindex='0'>" + product.Name + "</h2>")
+    $('#breadcrumb').append("<a href='#' tabindex='0'>All Products / </a>")
+    $('#breadcrumb').append("<a class='active' href='./categories.html' tabindex='0'>" + product.Type + "</a>")
 
     // Photo stuff
     const img_prodImg = document.createElement('img')
     img_prodImg.setAttribute('src', product.Image)
     img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
+    img_prodImg.setAttribute('tabindex', '0')
     $('#image').append(img_prodImg)
 
     // $("#title").append("<h2>" + product.Name + "</h2>")
-    $("#desc").append("<p>"+ product.Notes + "</p>")
+    $("#desc").append("<p tabindex='0'>"+ product.Notes + "</p>")
 
-    $("#category").append("<span> Product Type: </span>" + product.Type)
+    $("#category").append("<span tabindex='0'> Product Type: </span>" + product.Type)
 
     function generateGetInfo(mode) { 
         $("#get-info").append("<div style='margin-top: 0px; margin-bottom: 20px'>")
@@ -95,7 +96,7 @@ function setupProduct(product) {
                             : (mode === "borrow") ? getProductAvailability(product.borrowable)
                             : getProductAvailability(product.makable)
 
-        $("#get-info").append("<span style='font-size: 18px'>" + description + availability + "</span>")
+        $("#get-info").append("<span style='font-size: 18px' tabindex='0'>" + description + availability + "</span>")
 
         const redirect = (mode === "buy") ? product['buy-link']
                             : (mode === "borrow") ? product['borrow-loc']
@@ -103,10 +104,13 @@ function setupProduct(product) {
         const link = (redirect === "") ? "" : redirect
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
+        a_href.setAttribute('tabindex', '0')
 
 
         const button = document.createElement('button')
         button.setAttribute('class', 'btn btn--primary')
+        button.setAttribute('tabindex', '0')
+        button.setAttribute('role', 'button')
         const buttonText = (mode === "buy") ? "Link to Purchase"
                             : (mode === "borrow") ? "Link to Borrow"
                             : "Link to Make"
@@ -127,7 +131,7 @@ function setupProduct(product) {
     generateGetInfo("make")
 
     Object.keys(validFeatures).forEach(function(key) {
-        $('#features-product').append("<li>" + validFeatures[key] + ": " + product[key] + "</li>")
+        $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     }) 
 
 }

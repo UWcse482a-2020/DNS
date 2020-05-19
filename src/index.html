@@ -45,8 +45,8 @@
     <header class="header-section">
         <div class="container-fluid">
             <div class="inner-header">
-                <div class="logo">
-                    <a href="./index.html"><img src="../img/logo.png" alt=""></a>
+                <div class="logo" tabindex="0">
+                    <a href="./index.html" tabindex="0"><img src="../img/logo.png" alt=""></a>
                 </div>
                 <div class="header-right">
                     <img src="../img/icons/search.png" alt="" class="search-trigger">
@@ -57,18 +57,18 @@
                     </a>
                 </div>
                 <div class="user-access">
-                    <a href="./register.html">Register</a>
-                    <a href="./login.html" class="in">Sign in</a>
+                    <a href="./register.html" tabindex="0">Register</a>
+                    <a href="./login.html" class="in" tabindex="0">Sign in</a>
                 </div>
-                <nav class="main-menu mobile-menu">
+                <nav class="main-menu mobile-menu" tabindex="0">
                     <ul>
-                        <li><a class="active" href="./index.html">Home</a></li>
-                        <li><div id="browse-all" style="cursor: pointer;"><p class="p-header" style="font-size: 20; font-weight: 500;">Browse</p></div>
+                        <li><a class="active" href="./index.html" tabindex="0">Home</a></li>
+                        <li><div id="browse-all" style="cursor: pointer;"><p class="p-header" style="font-size: 20; font-weight: 500;" tabindex="0">Browse</p></div>
                             <ul class="sub-menu">
-                                <li><a href="./categories.html">Toy</a></li>
-                                <li><a href="./categories.html">Switch</a></li>
-                                <li><a href="./categories.html">Adapter</a></li>
-                                <li><a href="./categories.html">Mount</a></li>
+                                <li><a href="./categories.html" tabindex="0">Toy</a></li>
+                                <li><a href="./categories.html" tabindex="0">Switch</a></li>
+                                <li><a href="./categories.html" tabindex="0">Adapter</a></li>
+                                <li><a href="./categories.html" tabindex="0">Mount</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -84,10 +84,10 @@
             <div class="product-filter">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <div class="section-title">
+                        <div class="section-title" tabindex="0">
                             <h2>Assistive Tech Lending Library</h2>
                         </div>
-                        <div>
+                        <div tabindex="0">
                             <h3>Your destination for all things assistive tech.</h3>
                         </div>
                         
@@ -101,7 +101,7 @@
     <!-- Search Bar Begin -->
     <div class="container" style="padding-bottom: 80px;">
         <div class="row">
-                <div class="col-lg-3" style="display:inline-block">
+                <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Product Type</p>
                     <!-- audtocomplete="off" for firefox behavior -->
                     <select id="tag-select" autocomplete="off">
@@ -117,7 +117,7 @@
                         <option>Mouse</option>
                     </select>
                 </div>
-                <div class="col-lg-3" style="display:inline-block">
+                <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Features</p>
                     <select id="feature-select" autocomplete="off">
                         <option disabled selected value> -- select an option -- </option>
@@ -140,13 +140,13 @@
                 </div>
                 <p></p>
                 -->
-                <div class="col-lg-5" style="display:inline-block">
+                <div class="col-lg-5" style="display:inline-block" tabindex="0"> 
                     <p class="p-search">Search Bar</p>
                     <input type="text" placeholder="Search..">
                     <button id="search-btn">Search</button>
                 </div>
         </div>
-        <div>
+        <div tabindex="0">
             <ul id='tags'></ul>
         </div>
     </div>

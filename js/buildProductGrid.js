@@ -6,6 +6,7 @@ function setupCard(product, cardNum) {
     const div_singleProd = document.createElement('div')
     div_singleProd.setAttribute('class', "single-product-item")
     div_singleProd.setAttribute('style', "position: relative; width: 25%; padding-right: 15px; padding-left: 15px;")
+    div_singleProd.setAttribute('tabindex', '0')
 
     const a_img = document.createElement('a')
     a_img.setAttribute('id', 'a_img_href' + cardNum)
@@ -24,6 +25,7 @@ function setupCard(product, cardNum) {
     // TODO: Need to customize product page link 
     a_product.setAttribute('id', "a_product_href" + cardNum)
     a_product.setAttribute('href', "./product-page.html?ProductId=" + product.ProductId)
+    a_product.setAttribute('tabindex', '0')
 
     const h6_product = document.createElement('h6')
     h6_product.innerHTML = product.Name
@@ -63,12 +65,12 @@ function buildTitleAndBreadcrumb() {
         }
     }
     
-    $('.page-breadcrumb').append("<h2 class=\"col-lg-10\"> " + products.length + " Search Results for \"" + readableQuery + "\"</h2>")
+    $('.page-breadcrumb').append("<h2 class=\"col-lg-10\" tabindex='0'> " + products.length + " Search Results for \"" + readableQuery + "\"</h2>")
     if (!isBrowseAll) {
-        $('.page-breadcrumb').append("<a href='#'>All Products / </a>")
+        $('.page-breadcrumb').append("<a href='#' tabindex='0'>All Products / </a>")
     }
     if (hasType) {
-        $('.page-breadcrumb').append("<a class='active' href='./categories.html'>" + userQuery.Type + "</a>")
+        $('.page-breadcrumb').append("<a class='active' href='./categories.html' tabindex='0'>" + userQuery.Type + "</a>")
     }
 }
 
