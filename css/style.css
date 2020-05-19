@@ -94,6 +94,16 @@ p {
 	margin: 0 0 15px 0;
 }
 
+.p-search {
+	font-size: 18px;
+	color: #1e1e1e;
+	font-weight: 500;
+	/* line-height: 1.6; */
+	font-family: "Montserrat", sans-serif;
+}
+
+
+
 img {
 	max-width: 100%;
 }
