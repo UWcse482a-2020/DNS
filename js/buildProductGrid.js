@@ -1,6 +1,6 @@
 // incrementing variable for unique ids and parsing
 var cardNum = 0;
-const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
+const products = window.sessionStorage.getItem("queryResult");
 
 function test() { 
     console.log("Test function working")
@@ -29,7 +29,7 @@ function setupCard(product, rowNum) {
 
     const a_img = document.createElement('a')
     a_img.setAttribute('id', 'a_img_href' + cardNum)
-    a_img.setAttribute('href', './product-page.html?ProductId=' + product.ProductId)
+    a_img.setAttribute('href', './product-page.html')
 
     const figure = document.createElement('figure')
 
@@ -43,7 +43,7 @@ function setupCard(product, rowNum) {
     const a_product = document.createElement('a')
     // TODO: Need to customize product page link 
     a_product.setAttribute('id', "a_product_href" + cardNum)
-    a_product.setAttribute('href', "./product-page.html?ProductId=" + product.ProductId)
+    a_product.setAttribute('href', "./product-page.html")
 
     const h6_product = document.createElement('h6')
     h6_product.innerHTML = product.Name
@@ -65,8 +65,7 @@ function setupCard(product, rowNum) {
 
 function setupGrid() {
     var entriesPerRow = 4;
-    // var totalRows = products.size % 4;
-    var totalRows = 1;
+    var totalRows = products.length % 4;
 
     console.log("Outside forloop")
 
@@ -81,7 +80,7 @@ function setupGrid() {
         rowContainer2.setAttribute('id', 'rowContainer2' + rowNum)
 
         rowContainer1.append(rowContainer2)
-        $("#productgrid").append(rowContainer1)
+        $("#productgrid").append(rowContainer2)
 
         // Set up productsPerRow cards per row 
         // for (let rowEntryNum = 1; rowEntryNum <= entriesPerRow && cardNum < products.size; rowEntryNum++) { 
