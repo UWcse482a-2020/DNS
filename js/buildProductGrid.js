@@ -43,23 +43,30 @@ function setupCard(product, cardNum) {
 function setupGrid() {
     var readableQuery = "";
     var hasType = false;
-    var counter = 0;
-    for (var x in userQuery) {
-        if (counter > 0) {
-            readableQuery += ", "
-        } 
-        if (x === "Type") {
-            readableQuery += userQuery[x];
-            hasType = true;
-        } else {
-            readableQuery += x;
+    var isBrowseAll = false;
+    if (userQuery === "{}") {
+        readableQuery = "All Products";
+        isBrowseAll = true;
+    } else {
+        var counter = 0;
+        for (var x in userQuery) {
+            if (counter > 0) {
+                readableQuery += ", "
+            } 
+            if (x === "Type") {
+                readableQuery += userQuery[x];
+                hasType = true;
+            } else {
+                readableQuery += x;
+            }
+            counter++;
         }
-        counter++;
     }
-
     
     $('.page-breadcrumb').append("<h2> Search Results for \"" + readableQuery + "\"</h2>")
-    $('.page-breadcrumb').append("<a href='#'>All Products</a>")
+    if (!isBrowseAll) {
+        $('.page-breadcrumb').append("<a href='#'>All Products</a>")
+    }
     if (hasType) {
         $('.page-breadcrumb').append("<a class='active' href='./categories.html'>" + userQuery.Type + "</a>")
     }
