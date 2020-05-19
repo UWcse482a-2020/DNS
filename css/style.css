@@ -743,11 +743,11 @@ ol {
 
 .latest-products {
 	padding-top: 55px;
-	padding-bottom: 65px;
+	padding-bottom: 25ƒpx;
 }
 
 .product-filter {
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 .product-filter .section-title {
@@ -1983,9 +1983,9 @@ ol {
 
 .contact-form input {
 	width: 100%;
-	font-size: 12px;
+	font-size: 18px;
 	font-weight: 600;
-	color: #838383;
+	color: #1e1e1e;
 	border: 0;
 	padding-bottom: 14px;
 	border-bottom: 2px solid #E7EBED;
