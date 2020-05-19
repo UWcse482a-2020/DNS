@@ -7,9 +7,10 @@ function login(info) {
     $.get("/login", $.param(loginInfo), function (data) {
         $('#loginError').text(data);
         if (data == "Log in Successful") {
-            window.sessionStorage.setItem("loggedIn", true);
+            window.sessionStorage.setItem("loggedIn", "true");
             window.sessionStorage.removeItem("Default_tags");
-            window.sessionStorage.setItem("Default_tags", ["Toy"]);
+            var tags = ["Toy", "Switch"]
+            window.sessionStorage.setItem("Default_tags", JSON.stringify(tags));
             window.location.href = "index.html";
         }
     })

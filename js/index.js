@@ -2,9 +2,11 @@
 
 $(document).ready(function() {
     // check if user is logged in
-    if(window.sessionStorage.getItem("loggedIn") == true) {
+    if(window.sessionStorage.getItem("loggedIn") == "true") {
         console.log("logged in user detected");
-        window.sessionStorage.getItem("Default_tags").forEach(function(item, index) {
+        var defaultTagList = JSON.parse(window.sessionStorage.getItem("Default_tags"))
+        console.log(defaultTagList)
+        defaultTagList.forEach(function(item, index) {
             console.log("added to tag column");
             $("#tags").append("<li class='device-type'>" + item + "<span class='close'>x</span></li>");
         });
