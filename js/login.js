@@ -8,6 +8,7 @@ function login(info) {
         $('#loginError').text(data);
         if (data == "Log in Successful") {
             window.sessionStorage.setItem("loggedIn", "true");
+            window.sessionStorage.setItem("username", loginInfo.username);
             window.sessionStorage.removeItem("Default_tags");
             var tags = ["Toy", "Switch"]
             window.sessionStorage.setItem("Default_tags", JSON.stringify(tags));

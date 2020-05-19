@@ -10,8 +10,6 @@ $(document).ready(function() {
             console.log("added to tag column");
             $("#tags").append("<li class='device-type'>" + item + "<span class='close'>x</span></li>");
         });
-    } else {
-        console.log("this doesn't work");
     }
 });
 
