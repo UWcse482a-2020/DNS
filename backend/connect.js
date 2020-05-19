@@ -41,9 +41,9 @@ var methods = {
         console.log("entered queryDb")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
-            return dbo.collection("Users").insert(query, function (err, result) {
+            return dbo.collection("User").find(query).toArray(function (err, result) {
                 if (err) throw err;
-                console.log("user insert")
+                return callback(result);
             });
         });
     }

@@ -41,7 +41,6 @@ app.get('/register', (req, res) => {
   var username = req.query['username'];
   var email = req.query['email'];
   var password = req.query['password'];
-  var errorCount = 0;
   database.checkUserExists({"username": username}, function(result) {
     if (result > 0) {
       return res.json("Username already taken. Please try again.");
@@ -55,6 +54,20 @@ app.get('/register', (req, res) => {
           return res.json("Registration Successful. Please sign in.");
         }
       })
+    }
+  })
+})
+
+app.get('/login', (req, res) => {
+  var username = req.query['username'];
+  var password = req.query['password'];
+  database.checkUserExists({"username": username}, function(result) {
+    if (result == 0) {
+      return res.json("User does not exist.");
+    } else {
+      database.loginUser(req.query, function(result) {
+      })
+      return res.json("Log in Successful");
     }
   })
 })
