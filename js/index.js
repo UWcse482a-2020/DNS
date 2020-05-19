@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     // check if user is logged in
-    if(window.sessionStorage.getItem("loggedIn") = true) {
+    if(window.sessionStorage.getItem("loggedIn") == true) {
         console.log("logged in user detected");
         window.sessionStorage.getItem("Default_tags").forEach(function(item, index) {
             console.log("added to tag column");
@@ -15,10 +15,13 @@ $(document).ready(function() {
 
 document.getElementById("search-btn").addEventListener("click", searchButtonClick);
 function searchButtonClick() {
-    $.get("/searchquery", $.param(getQueryString()), function (data) {
+    var query = getQueryString();
+    $.get("/searchquery", $.param(query), function (data) {
         console.log(data);
         window.sessionStorage.removeItem("queryResult");
         window.sessionStorage.setItem("queryResult", JSON.stringify(data));
+        window.sessionStorage.removeItem("userQuery");
+        window.sessionStorage.setItem("userQuery", JSON.stringify(query));
         window.location.href = "categories.html";
     })    
 }
