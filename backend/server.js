@@ -85,14 +85,8 @@ app.use('/login.html', (req, res) => res.send(login))
 app.use('/profile.html', (req, res) => res.send(profile))
 app.use('/', (req, res) => res.send(index))
 
-
-// var server = app.listen(8081, function () {
-//   var host = server.address().address
-//   var port = server.address().port
-//   console.log("Example app listening at http://%s:%s", host, port)
-// })
-const port = process.env.PORT;
+const port = process.env.PORT || 8081;
 app.listen(port, function() {
-
+  console.log('server successfully started on port ' + port);
 });
 module.exports = app
