@@ -91,8 +91,8 @@ app.use('/', (req, res) => res.send(index))
 //   var port = server.address().port
 //   console.log("Example app listening at http://%s:%s", host, port)
 // })
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.listen(port, function() {
-  
+
 });
 module.exports = app
