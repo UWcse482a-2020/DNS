@@ -29,6 +29,7 @@
     "jquery": "^3.5.1",
     "jquery-editable-select": "^2.2.5",
     "mongodb": "^3.5.7",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "request": "^2.88.2"
   }
 }

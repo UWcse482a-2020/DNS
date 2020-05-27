@@ -15,8 +15,9 @@ function setupCard(product, cardNum) {
     const figure = document.createElement('figure')
 
     const img = document.createElement('img')
-    img.setAttribute('src', product.Image)
-    img.setAttribute('alt', 'Image of ' + product.Image)
+    var imageLink = product.Image.substring(0,6) === "../img" ? product.Image : product.ImgurLink;
+    img.setAttribute('src', imageLink)
+    img.setAttribute('alt', 'Image of ' + product.Name)
 
     const div_prodText = document.createElement('div')
     div_prodText.setAttribute('class', "product-text")
@@ -67,7 +68,7 @@ function buildTitleAndBreadcrumb() {
     
     $('.page-breadcrumb').append("<h2 class=\"col-lg-10\" tabindex='0'> " + products.length + " Search Results for \"" + readableQuery + "\"</h2>")
     if (!isBrowseAll) {
-        $('.page-breadcrumb').append("<a href='#' tabindex='0'>All Products / </a>")
+        $('.page-breadcrumb').append("<a href='./categories.html' tabindex='0' id='all-products'>All Products / </a>")
     }
     if (hasType) {
         $('.page-breadcrumb').append("<a class='active' href='./categories.html' tabindex='0'>" + userQuery.Type + "</a>")

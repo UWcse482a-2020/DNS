@@ -46,6 +46,18 @@ var methods = {
                 return callback(result);
             });
         });
+    }, 
+
+    insertField: function (pid, url) {
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            dbo.collection('Products').updateOne(
+                {ProductId: pid},
+                {
+                    $set: {'ImgurLink': url}
+                }
+            )
+        });
     }
 
 

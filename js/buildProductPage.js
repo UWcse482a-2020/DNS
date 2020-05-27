@@ -75,7 +75,8 @@ function setupProduct(product) {
 
     // Photo stuff
     const img_prodImg = document.createElement('img')
-    img_prodImg.setAttribute('src', product.Image)
+    var imageLink = product.Image.substring(0,6) === "../img" ? product.Image : product.ImgurLink;
+    img_prodImg.setAttribute('src', imageLink)
     img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
     img_prodImg.setAttribute('tabindex', '0')
     $('#image').append(img_prodImg)

@@ -18,7 +18,10 @@ $(document).ready(function() {
 });
 
 'use strict';
-document.getElementById("browse-all").addEventListener('click', function() {
+
+document.getElementById("browse-all").addEventListener('click', getAllProducts)
+//document.getElementById("all-products").addEventListener('click', getAllProducts)
+function getAllProducts() {
     var Q = {
         query: '{}'
     };
@@ -30,7 +33,7 @@ document.getElementById("browse-all").addEventListener('click', function() {
         window.sessionStorage.setItem("userQuery", JSON.stringify(Q));
         window.location.href = "categories.html";
     });
-})
+}
 
 (function ($) {
     /*------------------
@@ -81,7 +84,7 @@ document.getElementById("browse-all").addEventListener('click', function() {
     });
     
     /* Editable select */
-    $('#tag-select').editableSelect();
+    //$('#tag-select').editableSelect();
 
     /*------------------
         Carousel Slider
