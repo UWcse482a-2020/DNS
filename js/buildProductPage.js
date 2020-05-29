@@ -96,6 +96,15 @@ function setupProduct(product) {
     img_prodImg.setAttribute('tabindex', '0')
     $('#image').append(img_prodImg)
 
+    // Video Stuff (Hardcoded, for demonstration only)
+    console.log("hi");
+    if (product.ProductId == 51) { 
+        $('#video').append("<iframe src='https://drive.google.com/file/d/10X-ncURK-q2DAJtfsx6fWS4hIYokzlv6/preview' width='100%'></iframe>");
+    }
+    if (product.ProductId == 3) { 
+        $('#video').append("<iframe src='https://drive.google.com/file/d/1rHYeMLlbI37WcK4fUENUwM5SAJpctcvC/preview' width='100%'></iframe>"); 
+    }
+
     // $("#title").append("<h2>" + product.Name + "</h2>")
     $("#desc").append("<p tabindex='0'>" + product.Notes + "</p>")
 
@@ -131,7 +140,7 @@ function setupProduct(product) {
             : (mode === "borrow") ? "Link to Borrow"
                 : "Link to Make"
         button.innerHTML = buttonText
-        if (link === "") {
+        if (link === "" || availability === "Not Available") {
             button.disabled = true;
         }
 
