@@ -1,12 +1,29 @@
-const products = JSON.parse(window.sessionStorage.getItem("queryResult"));
+$(document).ready(function () {
+    var products = JSON.parse(window.sessionStorage.getItem("queryResult"));
+    var urlParams = new URLSearchParams(window.location.search);
+    var product = {};
+    if (products == null) {
+        var Q = {
+            query: { 'ProductId': urlParams.get("ProductId") }
+        };
+        $.get("/searchquery", $.param(Q), function (data) {
+            product = data[0];
+            setupProduct(product);
+        });
+    } else {
+        product = products.find(element => element.ProductId === urlParams.get("ProductId"));
+        setupProduct(product);
+    }
+});
 
-function getProductAvailability(status) { 
+
+function getProductAvailability(status) {
     const caps_status = status.toUpperCase()
-    if (caps_status === "YES") { 
-        return "Available" 
+    if (caps_status === "YES") {
+        return "Available"
     }
 
-    if (caps_status === "NO" || caps_status === "") { 
+    if (caps_status === "NO" || caps_status === "") {
         return "Not Available"
     }
 }
@@ -30,8 +47,6 @@ const validFeatures = {
 
 
 function setupProduct(product) {
-    var urlParams = new URLSearchParams(window.location.search);
-    product = products.find(element => element.ProductId === urlParams.get("ProductId"));
     /*product = {
         "_id": {
             "$oid": "5ec16e50cac0241e5c1d2374"
@@ -75,33 +90,33 @@ function setupProduct(product) {
 
     // Photo stuff
     const img_prodImg = document.createElement('img')
-    var imageLink = product.Image.substring(0,6) === "../img" ? product.Image : product.ImgurLink;
+    var imageLink = product.Image.substring(0, 6) === "../img" ? product.Image : product.ImgurLink;
     img_prodImg.setAttribute('src', imageLink)
     img_prodImg.setAttribute('alt', 'Image of ' + product.Name)
     img_prodImg.setAttribute('tabindex', '0')
     $('#image').append(img_prodImg)
 
     // $("#title").append("<h2>" + product.Name + "</h2>")
-    $("#desc").append("<p tabindex='0'>"+ product.Notes + "</p>")
+    $("#desc").append("<p tabindex='0'>" + product.Notes + "</p>")
 
     $("#category").append("<span tabindex='0'> Product Type: </span>" + product.Type)
 
-    function generateGetInfo(mode) { 
+    function generateGetInfo(mode) {
         $("#get-info").append("<div style='margin-top: 0px; margin-bottom: 20px'>")
 
-        const description = (mode === "buy") ? "Purchase from a retailer: " 
-                            : (mode === "borrow") ? "Borrow from a partner: "
-                            : "Make from instructions: "
+        const description = (mode === "buy") ? "Purchase from a retailer: "
+            : (mode === "borrow") ? "Borrow from a partner: "
+                : "Make from instructions: "
 
         const availability = (mode === "buy") ? getProductAvailability(product.buyable)
-                            : (mode === "borrow") ? getProductAvailability(product.borrowable)
-                            : getProductAvailability(product.makable)
+            : (mode === "borrow") ? getProductAvailability(product.borrowable)
+                : getProductAvailability(product.makable)
 
         $("#get-info").append("<span style='font-size: 18px' tabindex='0'>" + description + availability + "</span>")
 
         const redirect = (mode === "buy") ? product['buy-link']
-                            : (mode === "borrow") ? product['borrow-loc']
-                            : product['make-link']
+            : (mode === "borrow") ? product['borrow-loc']
+                : product['make-link']
         const link = (redirect === "") ? "" : redirect
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
@@ -113,15 +128,15 @@ function setupProduct(product) {
         button.setAttribute('tabindex', '0')
         button.setAttribute('role', 'button')
         const buttonText = (mode === "buy") ? "Link to Purchase"
-                            : (mode === "borrow") ? "Link to Borrow"
-                            : "Link to Make"
+            : (mode === "borrow") ? "Link to Borrow"
+                : "Link to Make"
         button.innerHTML = buttonText
         if (link === "") {
             button.disabled = true;
         }
-        
+
         a_href.append(button)
-        
+
         $("#get-info").append(a_href)
 
         $("#get-info").append("</div>")
@@ -131,13 +146,11 @@ function setupProduct(product) {
     generateGetInfo("borrow")
     generateGetInfo("make")
 
-    Object.keys(validFeatures).forEach(function(key) {
+    Object.keys(validFeatures).forEach(function (key) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
-    }) 
+    })
 
     $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + " data-numposts='10' data-width='540'></div>");
 
 
 }
-
-setupProduct()
