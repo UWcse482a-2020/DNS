@@ -123,9 +123,14 @@ function setupProduct(product) {
 
         $("#get-info").append("<span style='font-size: 18px' tabindex='0'>" + description + availability + "</span>")
 
-        const redirect = (mode === "buy") ? product['buy-link']
+        let redirect = (mode === "buy") ? product['buy-link']
             : (mode === "borrow") ? product['borrow-loc']
                 : product['make-link']
+
+        if (redirect === "https://provail.org/") { 
+            redirect = "https://docs.google.com/forms/d/e/1FAIpQLScpE4-eZF0djVPW-D6StWxH5ADoyeqj1Pc7-Qc-BpjEExucnQ/viewform?usp=pp_url&entry.1617628070=" + product.Inventory;
+        }
+
         const link = (redirect === "") ? "" : redirect
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
