@@ -19,11 +19,24 @@ $(document).ready(function() {
 
 'use strict';
 
-document.getElementById("browse-all").addEventListener('click', getAllProducts)
-//document.getElementById("all-products").addEventListener('click', getAllProducts)
-function getAllProducts() {
+document.getElementById("browse-all").addEventListener('click', () => {
+    searchProductDB('{}');
+})
+document.getElementById("browse-toy").addEventListener('click', () => {
+    searchProductDB({"Type":"Toy"});
+})
+document.getElementById("browse-switch").addEventListener('click', () => {
+    searchProductDB({"Type":"Switch"});
+})
+document.getElementById("browse-mount").addEventListener('click', () => {
+    searchProductDB({"Type":"Mount"});
+})
+document.getElementById("browse-adapter").addEventListener('click', () => {
+    searchProductDB({"Type":"Adapter"});
+})
+function searchProductDB(searchTerms) {
     var Q = {
-        query: '{}'
+        query: searchTerms
     };
     $.get("/searchquery", $.param(Q), function (data) {
         //console.log(data);
