@@ -96,6 +96,15 @@ function setupProduct(product) {
     img_prodImg.setAttribute('tabindex', '0')
     $('#image').append(img_prodImg)
 
+    // Video Stuff (Hardcoded, for demonstration only)
+    console.log("hi");
+    if (product.ProductId == 51) { 
+        $('#video').append("<iframe src='https://drive.google.com/file/d/10X-ncURK-q2DAJtfsx6fWS4hIYokzlv6/preview' width='100%'></iframe>");
+    }
+    if (product.ProductId == 3) { 
+        $('#video').append("<iframe src='https://drive.google.com/file/d/1rHYeMLlbI37WcK4fUENUwM5SAJpctcvC/preview' width='100%'></iframe>"); 
+    }
+
     // $("#title").append("<h2>" + product.Name + "</h2>")
     $("#desc").append("<p tabindex='0'>" + product.Notes + "</p>")
 
@@ -114,9 +123,14 @@ function setupProduct(product) {
 
         $("#get-info").append("<span style='font-size: 18px' tabindex='0'>" + description + availability + "</span>")
 
-        const redirect = (mode === "buy") ? product['buy-link']
+        let redirect = (mode === "buy") ? product['buy-link']
             : (mode === "borrow") ? product['borrow-loc']
                 : product['make-link']
+
+        if (redirect === "https://provail.org/") { 
+            redirect = "https://docs.google.com/forms/d/e/1FAIpQLScpE4-eZF0djVPW-D6StWxH5ADoyeqj1Pc7-Qc-BpjEExucnQ/viewform?usp=pp_url&entry.1617628070=" + product.Inventory;
+        }
+
         const link = (redirect === "") ? "" : redirect
         const a_href = document.createElement('a')
         a_href.setAttribute('href', link)
@@ -131,7 +145,7 @@ function setupProduct(product) {
             : (mode === "borrow") ? "Link to Borrow"
                 : "Link to Make"
         button.innerHTML = buttonText
-        if (link === "") {
+        if (link === "" || availability === "Not Available") {
             button.disabled = true;
         }
 
