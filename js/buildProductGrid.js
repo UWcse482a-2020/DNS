@@ -43,6 +43,14 @@ function setupCard(product, cardNum) {
     
 }
 
+function parseDisplayableTag(element, tag) {
+    if (tag === "Type") {
+        return element[tag];
+    } else {
+        return tag;
+    }
+}
+
 function buildTitleAndBreadcrumb() {
     var readableQuery = "";
     var hasType = false;
@@ -50,18 +58,45 @@ function buildTitleAndBreadcrumb() {
     if (userQuery === "{}") {
         readableQuery = "All Products";
         isBrowseAll = true;
-    } else {
+    } else if (userQuery.hasOwnProperty("$or")) {
+        var counter = 0;
+        userQuery["$or"].forEach((element) => {
+            if (counter > 0) {
+                readableQuery += ", "
+            } 
+            var key = Object.getOwnPropertyNames(element)[0];
+            readableQuery += parseDisplayableTag(element, key);
+            counter++;
+          });
+    } else if (userQuery.hasOwnProperty("$and")) {
+        var counter = 0;
+        userQuery["$and"].forEach((element) => {
+            if (counter > 0) {
+                readableQuery += ", "
+            } 
+            var key = Object.getOwnPropertyNames(element)[0];
+            if (key === "$or") {
+              element["$or"].forEach((subel) => {
+                if (counter > 0) {
+                    readableQuery += ", "
+                } 
+                var key2 = Object.getOwnPropertyNames(subel)[0];
+                readableQuery += parseDisplayableTag(subel, key2);
+                counter++;
+              });
+            } else {
+                readableQuery += parseDisplayableTag(element, key)
+            }
+            counter++;
+          });
+    }
+    else {
         var counter = 0;
         for (var x in userQuery) {
             if (counter > 0) {
                 readableQuery += ", "
             } 
-            if (x === "Type") {
-                readableQuery += userQuery[x];
-                hasType = true;
-            } else {
-                readableQuery += x;
-            }
+            readableQuery += parseDisplayableTag(userQuery, x);
             counter++;
         }
     }
