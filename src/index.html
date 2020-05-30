@@ -104,15 +104,19 @@
                 <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Product Type</p>
                     <!-- audtocomplete="off" for firefox behavior -->
-                    <select id="tag-select" autocomplete="off">
+                    <select id="tag-select" autocomplete="off" class='select-css'>
                         <option disabled selected value> -- select an option -- </option>
                     </select>
                 </div>
                 <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Features</p>
-                    <select id="feature-select" autocomplete="off">
+                    <select id="feature-select" autocomplete="off" class='select-css'>
                         <option disabled selected value> -- select an option -- </option>
                     </select>
+                </div>
+                <div class="col-lg-2" style="display:inline-block" tabindex="0">
+                    <p class="p-search">Search</p>
+                    <button id="search-btn" class='b-primary'>Search</button>
                 </div>
                 <!--
                 <div>
@@ -123,14 +127,14 @@
                 </div>
                 <p></p>
                 -->
-                <div class="col-lg-5" style="display:inline-block; flex: 41.666667%; max-width: 27%;" tabindex="0"> 
+                <!-- <div class="col-lg-5" style="display:inline-block; flex: 41.666667%; max-width: 27%;" tabindex="0"> 
                     <p class="p-search">Search Bar</p>
                     <input type="text" placeholder="Search..">
                     <button id="search-btn">Search</button>
-                </div>
+                </div> -->
         </div>
-        <div tabindex="0">
-            <ul id='tags'></ul>
+        <div class='search-tag-container'>
+            <ul id='tags' style="font-size: 18px;"></ul>
         </div>
     </div>
 
