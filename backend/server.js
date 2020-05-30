@@ -42,6 +42,18 @@ app.get('/searchquery', (req, res) => {
   })
 })
 
+app.get('/getTags', (req, res) => {
+  typeTags = [];
+  featureTags = [];
+  database.getTags({"category": "type"}, function(result) {
+    typeTags = result;
+    database.getTags({"category": "feature"}, function(result) {
+      featureTags = result;
+      return res.json([typeTags, featureTags]);
+    })
+  })
+})
+
 app.get('/register', (req, res) => {
   var username = req.query['username'];
   var email = req.query['email'];
