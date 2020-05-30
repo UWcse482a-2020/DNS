@@ -70,7 +70,7 @@ $('#tag-select').change(function () {
         tagList.push($(this).text());
     });
     if (!tagList.includes(name + "x")) {
-        $("#tags").append("<li class='device-type'>" + name + "<span class='search-tag-close'>x</span></li>");
+        $("#tags").append("<li class='device-type' tabindex=0>" + name + "<button class='search-tag-close' tabindex=0>x</button></li>");
     }
 });
 $('#feature-select').change(function () {
@@ -80,7 +80,7 @@ $('#feature-select').change(function () {
         tagList.push($(this).text());
     });
     if (!tagList.includes(name + "x")) {
-        $("#tags").append("<li class='feature'>" + name + "<span class='search-tag-close'>x</span></li>");
+        $("#tags").append("<li class='feature' tabindex=0>" + name + "<button class='search-tag-close' tabindex=0>x</button></li>");
     }
 });
 
