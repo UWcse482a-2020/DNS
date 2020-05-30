@@ -80,11 +80,15 @@ app.get('/login', (req, res) => {
   var password = req.query['password'];
   database.checkUserExists({"username": username}, function(result) {
     if (result == 0) {
-      return res.json("User does not exist.");
+      return res.json("Wrong username or password");
     } else {
-      database.loginUser(req.query, function(result) {
+      database.loginUser({'username': username, 'password': password}, function(result) {
+        if (result > 0) {
+          return res.json("Log in Successful");
+        } else {
+          return res.json("Wrong username or password");
+        }
       })
-      return res.json("Log in Successful");
     }
   })
 })

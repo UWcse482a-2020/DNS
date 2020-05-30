@@ -52,7 +52,7 @@ var methods = {
         console.log("entered loginUser")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
-            return dbo.collection("User").find(query).toArray(function (err, result) {
+            return dbo.collection("Users").count(query, function (err, result) {
                 if (err) throw err;
                 return callback(result);
             });
