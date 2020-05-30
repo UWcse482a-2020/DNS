@@ -15,8 +15,19 @@ var methods = {
         });
     },
 
+    getTags: function (query, callback) {
+        console.log("entered getTags")
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            return dbo.collection("Tags").distinct("value", query, function (err, result) {
+                if (err) throw err;
+                return callback(result);
+            });
+        });
+    },
+
     checkUserExists: function (query, callback) {
-        console.log("entered queryDb")
+        console.log("entered checkUserExists")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
             return dbo.collection("Users").count(query, function (err, result) {
@@ -27,7 +38,7 @@ var methods = {
     },
 
     registerUser: function (query, callback) {
-        console.log("entered queryDb")
+        console.log("entered registerUser")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
             return dbo.collection("Users").insert(query, function (err, result) {
@@ -38,7 +49,7 @@ var methods = {
     },
 
     loginUser: function (query, callback) {
-        console.log("entered queryDb")
+        console.log("entered loginUser")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
             return dbo.collection("User").find(query).toArray(function (err, result) {
