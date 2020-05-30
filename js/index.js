@@ -25,6 +25,7 @@ $(document).ready(function() {
             $("#tags").append("<li class='device-type'>" + item + "<span class='close'>x</span></li>");
         });
     }
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
 });
 
 document.getElementById("search-btn").addEventListener("click", searchButtonClick);
