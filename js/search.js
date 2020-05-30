@@ -36,7 +36,16 @@ function getQueryString() {
             andClause["$and"].push(feature);
         })
         queryString = andClause;
-    } else {
+    } else if (features.length > 1 && productTypes.length == 0) {
+        var orClause = {"$or": []};
+        features.forEach((content) => {
+            var feature = {};
+            feature[content] = "yes";
+            orClause["$or"].push(feature);
+        })
+        queryString = orClause;
+    } 
+    else {
         // implicit AND operator is used
         productTypes.forEach((content) => {
             queryString["Type"] = content;
