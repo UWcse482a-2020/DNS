@@ -95,7 +95,7 @@ p {
 }
 
 .p-search {
-	font-size: 18px;
+	font-size: 20px;
 	color: #1e1e1e;
 	font-weight: 500;
 	/* line-height: 1.6; */
@@ -2451,4 +2451,190 @@ ol {
 	width: 100%;
 	height: 100%;
 	left: 0; top: 0;
+}
+
+/* Search Bar Styling */
+/* https://css-tricks.com/styling-a-select-like-its-2019/ */
+.select-css {
+    display: block;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #1e1e1e;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%; /* useful when width is set to anything other than 100% */
+    box-sizing: border-box;
+    margin: 0;
+    border: 1.5px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 1em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+        for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+        
+    */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#ffffff 100%);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+    display: none;
+}
+/* Hover style */
+.select-css:hover {
+    border-color: #888;
+}
+/* Focus style */
+.select-css:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+/* Set options to normal weight */
+.select-css option {
+    font-weight:normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+}
+
+/* Disabled styles */
+.select-css:disabled, .select-css[aria-disabled=true] {
+    color: gray;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+.select-css:disabled:hover, .select-css[aria-disabled=true] {
+    border-color: #aaa;
+}
+
+/* Search Button Styling */
+/* https://blog.prototypr.io/designing-usable-and-accessible-buttons-dffb464d9be2 */
+.b-primary {
+	font-size: 18px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	color: #1e1e1e;
+	/* text-shadow: 0 1px 0 rgba(255,255,255,0.65); */
+	padding: 0 30px;
+	height: 45px;
+	/* line-height: 45px; */
+	display: inline-block;
+	background-color: #febd69;
+	transition: all 0.1s linear;
+	border-radius: 1em;
+	border: 1.5px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	/* box-shadow:
+		0 1px 2px rgba(0,0,0,0.2),
+		inset 0 -1px 0 rgba(0,0,0,0.25),
+		inset 0 -45px 45px -45px #939699; */
+	text-decoration: none !important;
+}
+
+.b-primary:hover {
+	color: #1e1e1e;
+	background-color: #f7af52;
+	border-color: #888;
+	/* box-shadow:
+		0 1px 2px rgba(0,0,0,0.25),
+		inset 0 -1px 0 rgba(0,0,0,0.25),
+		inset 0 -45px 45px -45px #b1dcff; */
+}
+
+/* Focus style */
+.b-primary:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+.b-primary:active {
+	color: #1e1e1e;
+	line-height: 47px !important;
+	/* box-shadow:
+		0 0 0 rgba(0,0,0,0),
+		inset 0 1px 1px rgba(0,0,0,0.2),
+		inset 0 45px 45px -45px #b1dcff,
+		0 1px 0 rgba(255,255,255,0.5); */
+	background-color: #fcfcfc;
+}
+.b-primary:active {
+	transition: none !important;
+}
+
+/* Search Bar Tag Styling */
+.feature {
+	font-size: 18;
+	font-family: "Montserrat", sans-serif;
+	margin: auto;
+}
+
+.device-type {
+	font-size: 18;
+	font-family: "Montserrat", sans-serif;
+	margin: auto;
+}
+
+.search-tag-container { 
+	margin-top: 10px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.search-tag-close { 
+	cursor: pointer;
+	/* float: right; */
+	margin-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+	opacity: .50;
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+/* Focus style */
+.search-tag-close:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+.search-tag-close:hover {
+	color: #1e1e1e;
+	/* background-color: #f7af52; */
+	border-color: #888;
+	opacity: 1;
+	/* box-shadow:
+		0 1px 2px rgba(0,0,0,0.25),
+		inset 0 -1px 0 rgba(0,0,0,0.25),
+		inset 0 -45px 45px -45px #b1dcff; */
 }
