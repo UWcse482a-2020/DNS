@@ -32,6 +32,11 @@ const profile = fs.readFileSync(
   'utf8',
 )
 
+const taxonomy = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/taxonomy.html'),
+  'utf8',
+)
+
 app.get('/api/healthcheck', (req, res) => {
   return res.send('Healthy!')
 })
@@ -68,7 +73,7 @@ app.get('/register', (req, res) => {
         } else {
           database.registerUser(req.query, function(result) {
           })
-          return res.json("Registration Successful. Please sign in.");
+          return res.json("Registration Successful.");
         }
       })
     }
@@ -99,6 +104,7 @@ app.use('/product-page.html', (req, res) => res.send(product))
 app.use('/register.html', (req, res) => res.send(register))
 app.use('/login.html', (req, res) => res.send(login))
 app.use('/profile.html', (req, res) => res.send(profile))
+app.use('/taxonomy.html', (req, res) => res.send(taxonomy))
 app.use('/', (req, res) => res.send(index))
 
 const port = process.env.PORT || 8081;
