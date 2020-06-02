@@ -38,7 +38,8 @@ var methods = {
     },
 
     registerUser: function (query, callback) {
-        console.log("entered registerUser")
+        console.log("entered registerUser");
+        console.log(query);
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
             return dbo.collection("Users").insert(query, function (err, result) {
@@ -69,8 +70,29 @@ var methods = {
                 }
             )
         });
-    }
+    },
 
+    insertTags: function (username, tags) {
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            dbo.collection('Users').updateOne(
+                {username: username},
+                {
+                    $set: {'tags': tags}
+                }
+            )
+        });
+    },
+
+    getDefaultTags: function (query, callback) {
+        client.connect(function (err, db) {
+            var dbo = db.db("AssistiveTechLib");
+            dbo.collection('Users').findOne(query, function (err, result) {
+                if (err) throw err;
+                return callback(result);
+            });
+        });
+    }
 
 }
 module.exports = methods;

@@ -62,7 +62,6 @@ app.get('/getTags', (req, res) => {
 app.get('/register', (req, res) => {
   var username = req.query['username'];
   var email = req.query['email'];
-  var password = req.query['password'];
   database.checkUserExists({"username": username}, function(result) {
     if (result > 0) {
       return res.json("Username already taken. Please try again.");
@@ -95,6 +94,27 @@ app.get('/login', (req, res) => {
         }
       })
     }
+  })
+})
+
+app.get('/insertDefaultTags', (req, res) => {
+  var username = req.query['username'];
+  var tags = req.query['tags'];
+  database.checkUserExists({"username": username}, function(result) {
+    if (result == 0) {
+      return res.json("There was an error accessing your account");
+    } else {
+      database.insertTags(username, tags, function(result) {
+      });
+      return res.json("Success");
+    }
+  })
+})
+
+app.get('/getDefaultTags', (req, res) => {
+  var username = req.query['username'];
+  database.getDefaultTags({username: username}, function(result) {
+    return res.json(result.tags);
   })
 })
 
