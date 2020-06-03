@@ -164,7 +164,7 @@ function setupProduct(product) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
 
-    $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + " data-numposts='10' data-width='540'></div>");
+    $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
 
 
 }
