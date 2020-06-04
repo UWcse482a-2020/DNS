@@ -1,21 +1,6 @@
 // JS specific to index.html
 
 $(document).ready(function () {
-  //dynamically put in tags
-  $.get("/getTags", function (data) {
-    typeTags = data[0];
-    featureTags = data[1];
-    console.log("retrieving tags");
-    console.log(typeTags);
-    console.log(featureTags);
-    typeTags.forEach(function (item, index) {
-      $("#tag-select").append("<option>" + item + "</option>");
-    });
-    featureTags.forEach(function (item, index) {
-      $("#feature-select").append("<option>" + item + "</option>");
-    });
-  });
-
   // check if user is logged in
   if (window.sessionStorage.getItem("loggedIn") == "true") {
     var username = window.sessionStorage.getItem("username");
