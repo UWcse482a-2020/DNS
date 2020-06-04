@@ -96,50 +96,33 @@
 
     <!-- Categories Page Section Begin -->
     <section class="categories-page spad">
-        <!-- Search Bar Begin -->
+       <!-- Search Bar Begin -->
     <div class="container" style="padding-bottom: 80px;">
         <div class="row" style="display: flex; flex-wrap: wrap;margin-right: -15px; margin-left: -15px; justify-content: center;">
                 <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Product Type</p>
                     <!-- audtocomplete="off" for firefox behavior -->
-                    <select id="tag-select" autocomplete="off">
+                    <select id="tag-select" autocomplete="off" class='select-css'>
                         <option disabled selected value> -- select an option -- </option>
-                        <option>Toy</option>
-                        <option>Switch</option>
-                        <option>Switch Interface</option>
-                        <option>Adapter</option>
-                        <option>Computer Interface</option>
-                        <option>Environmental Control</option>
-                        <option>Video Game Accessories</option>
-                        <option>Mount</option>
-                        <option>Mouse</option>
                     </select>
                 </div>
                 <div class="col-lg-3" style="display:inline-block" tabindex="0">
                     <p class="p-search">Features</p>
-                    <select id="feature-select" autocomplete="off">
+                    <select id="feature-select" autocomplete="off" class='select-css'>
                         <option disabled selected value> -- select an option -- </option>
-                        <option>sound-off</option>
-                        <option>Moves</option>
-                        <option>lights-off</option>
-                        <option>sound-loud</option>
-                        <option>lights-bright</option>
-                        <option>input-small</option>
-                        <option>touch-input</option>
-                        <option>textured</option>
                     </select>
                 </div>
-                <div class="col-lg-5" style="display:inline-block; flex: 41.666667%; max-width: 27%;" tabindex="0"> 
-                    <p class="p-search">Search Bar</p>
-                    <input type="text" placeholder="Search..">
-                    <button id="search-btn">Search</button>
+                <div class="col-lg-2" style="display:inline-block" tabindex="0">
+                    <p class="p-search">Search</p>
+                    <button id="search-btn" class='b-primary'>Search</button>
                 </div>
         </div>
-        <div tabindex="0">
-            <ul id='tags'></ul>
+        <div class='search-tag-container'>
+            <ul id='tags' style="font-size: 18px;"></ul>
         </div>
     </div>
-    <!--Search bar end-->
+
+    <!-- Search Bar End -->
         <div class="container">
             <div class="row" id="productgrid">
                 <!-- Dynamically Filled -->
