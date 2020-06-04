@@ -2,7 +2,10 @@ $(document).ready(function () {
     var products = JSON.parse(window.sessionStorage.getItem("queryResult"));
     var urlParams = new URLSearchParams(window.location.search);
     var product = {};
-    if (products == null) {
+    if (products != null) {
+        product = products.find(element => element.ProductId === urlParams.get("ProductId"));
+    }
+    if (products == null || product == null) {
         var Q = {
             query: { 'ProductId': urlParams.get("ProductId") }
         };
@@ -11,7 +14,7 @@ $(document).ready(function () {
             setupProduct(product);
         });
     } else {
-        product = products.find(element => element.ProductId === urlParams.get("ProductId"));
+        //product = products.find(element => element.ProductId === urlParams.get("ProductId"));
         setupProduct(product);
     }
 });
@@ -163,8 +166,7 @@ function setupProduct(product) {
     Object.keys(validFeatures).forEach(function (key) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
-
-    $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
+    $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + parseInt(product.ProductId) + "\' data-numposts='10' data-width='540'></div>");
 
 
 }
