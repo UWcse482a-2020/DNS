@@ -166,7 +166,8 @@ function setupProduct(product) {
     Object.keys(validFeatures).forEach(function (key) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
-    $("#fbComments").append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + parseInt(product.ProductId) + "\' data-numposts='10' data-width='540'></div>");
+    // parseInt(product.ProductId)
+    $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
 
 
 }
