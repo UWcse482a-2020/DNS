@@ -17,8 +17,6 @@ $(document).ready(function () {
         //product = products.find(element => element.ProductId === urlParams.get("ProductId"));
         setupProduct(product);
     }
-    $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
-
 });
 
 
@@ -102,7 +100,6 @@ function setupProduct(product) {
     $('#image').append(img_prodImg)
 
     // Video Stuff (Hardcoded, for demonstration only)
-    console.log("hi");
     if (product.ProductId == 51) { 
         $('#video').append("<iframe src='https://drive.google.com/file/d/10X-ncURK-q2DAJtfsx6fWS4hIYokzlv6/preview' width='100%'></iframe>");
     }
@@ -169,7 +166,11 @@ function setupProduct(product) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
     // parseInt(product.ProductId)
+    const fbDiv = document.createElement('div');
+    fbDiv.setAttribute('class', 'fb-comments');
+    fbDiv.setAttribute('data-href','https://assistivetechlib.herokuapp.com/product-page.html?ProductId=' + product.ProductId);
+    fbDiv.setAttribute('data-numposts', 10);
+    fbDiv.setAttribute('data-width', 540);
+    $('#fbComments').append(fbDiv);
     // $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
-
-
 }
