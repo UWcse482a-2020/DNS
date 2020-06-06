@@ -17,6 +17,8 @@ $(document).ready(function () {
         //product = products.find(element => element.ProductId === urlParams.get("ProductId"));
         setupProduct(product);
     }
+    $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
+
 });
 
 
@@ -167,7 +169,7 @@ function setupProduct(product) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
     // parseInt(product.ProductId)
-    $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
+    // $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
 
 
 }
