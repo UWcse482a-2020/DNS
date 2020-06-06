@@ -111,7 +111,7 @@ function setupProduct(product) {
     // $("#title").append("<h2>" + product.Name + "</h2>")
     $("#desc").append("<p tabindex='0'>" + product.Notes + "</p>")
 
-    $("#category").append("<span tabindex='0'> Product Type: </span>" + product.Type)
+    $("#category").append("<span tabindex='0'><u>Product Type:</u> </span>" + product.Type)
 
     function generateGetInfo(mode) {
         $("#get-info").append("<div style='margin-top: 0px; margin-bottom: 20px'>")
