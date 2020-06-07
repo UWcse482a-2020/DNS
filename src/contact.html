@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="assistive technology, products, accessibility">
+    <meta name="keywords" content="Yoga, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Assistive Tech Lending Library</title>
+    <title>Assisitve Tech Lending Library</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
@@ -25,7 +25,11 @@
 </head>
 
 <body>
-   
+    <!-- Page Preloder
+    <div id="preloder">
+        <div class="loader"></div>
+    </div> -->
+    
     <!-- Search model -->
 	<div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">
@@ -44,21 +48,21 @@
                 <div class="logo" tabindex="0">
                     <a href="./index.html" tabindex="0"><img src="../img/logo.png" alt=""></a>
                 </div>
-                <!-- <div class="header-right">
+                <div class="header-right">
                     <img src="../img/icons/search.png" alt="" class="search-trigger">
                     <img src="../img/icons/man.png" alt="">
                     <a href="#">
                         <img src="../img/icons/bag.png" alt="">
                         <span>2</span>
                     </a>
-                </div> -->
+                </div>
                 <div class="user-access">
                     <a href="./register.html" tabindex="0">Register</a>
                     <a href="./login.html" class="in" tabindex="0">Sign in</a>
                 </div>
                 <nav class="main-menu mobile-menu" tabindex="0">
                     <ul>
-                        <li><a class="p-header" href="./index.html" tabindex="0">Home</a></li>
+                        <li><a class="active" href="./index.html" tabindex="0">Home</a></li>
                         <li><div id="browse-all" style="cursor: pointer;"><p class="p-header" style="font-size: 20; font-weight: 500;" tabindex="0">Browse</p></div>
                             <ul class="sub-menu">
                                 <li><a href="#" id="browse-toy" tabindex="0">Toy</a></li>
@@ -67,8 +71,6 @@
                                 <li><a href="#" id="browse-mount" tabindex="0">Mount</a></li>
                             </ul>
                         </li>
-                        <li><a class="p-header" href="./about.html" tabindex="0">About</a></li>
-                        <li><a class="p-header" href="./contact.html" tabindex="0">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -76,67 +78,56 @@
     </header>
     <!-- Header End -->
 
-    <!-- Title Begin -->
-    <section class="latest-products spad">
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
         <div class="container">
-            <div class="product-filter">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="section-title" tabindex="0">
-                            <h2>Assistive Tech Lending Library</h2>
-                        </div>
-                        <div tabindex="0">
-                            <h3 id='welcome-message'>Your destination for all things assistive tech.</h3>
-                        </div>
-                        
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>Register<span>.</span></h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Title End -->
+    <!-- Page Add Section End -->
 
-    <!-- Search Bar Begin -->
-    <div class="container" style="padding-bottom: 80px;">
-        <div class="row" style="display: flex; flex-wrap: wrap;margin-right: -15px; margin-left: -15px; justify-content: center;">
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Product Type</p>
-                    <!-- audtocomplete="off" for firefox behavior -->
-                    <select id="tag-select" autocomplete="off" class='select-css'>
-                        <option disabled selected value> -- select an option -- </option>
-                    </select>
+    <!-- Contact Section Begin -->
+    <div class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p id='registerError' style = "color:red;font-size:18px" ></p>
+                    <form onsubmit="register(this);return false" class="contact-form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input name="username" type="text" placeholder="Username" autocomplete="off" required>
+                            </div>
+                            <div class="col-lg-12">
+                                <input name="email" type="email" placeholder="E-mail"autocomplete="off"  required>
+                                <input id = "password" name="password" type="password" placeholder="Password" autocomplete="off" required>
+                                <input name="confirm_password" type="password" placeholder="Confirm Password" autocomplete="off" required oninput="check(this)">
+                                <script language='javascript' type='text/javascript'>
+                                    function check(input) {
+                                        if (input.value != document.getElementById('password').value) {
+                                            input.setCustomValidity('Password Must be Matching.');
+                                        } else {
+                                            // input is valid -- reset the error message
+                                            input.setCustomValidity('');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-lg-12 text-left">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Features</p>
-                    <select id="feature-select" autocomplete="off" class='select-css'>
-                        <option disabled selected value> -- select an option -- </option>
-                    </select>
-                </div>
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Search Bar</p>
-                    <input class="search-input" type="text" id="search-bar" placeholder="Search on keyword..." autocomplete="off">
-                </div>
-                <div class="col-lg-2" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Search</p>
-                    <button id="search-btn" class='b-primary'>Search</button>
-                </div>
-                <!--
-                <div>
-                    <p>Voluntary Muscle Movement</p>
-                    <select id="muscle-select">
-                        <option>Arm</option>
-                    </select>
-                </div>
-                <p></p>
-                -->
-        </div>
-        <div class='search-tag-container'>
-            <ul id='tags' style="font-size: 18px;"></ul>
+            </div>            
         </div>
     </div>
-
-    <!-- <div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51' data-numposts='10' data-width='540'></div> -->
-    <!-- Search Bar End -->
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section spad">
@@ -185,18 +176,15 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <!-- <script src="../js/jquery-3.3.1.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <!-- <script src="../js/jquery.magnific-popup.min.js"></script> -->
     <script src="../js/jquery.slicknav.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
+    <!-- <script src="../js/owl.carousel.min.js"></script> -->
     <script src="../js/jquery.nice-select.min.js"></script>
     <script src="../js/mixitup.min.js"></script>
-    <script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/index.js"></script>
-    <script src="../js/search.js"></script>
+    <script src="../js/register.js"></script>
 </body>
 
 </html>
