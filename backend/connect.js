@@ -7,7 +7,7 @@ var methods = {
         console.log("entered queryDb")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
-            //var query = {"Type":"Switch","Moves":"yes"};
+            //var query = {'$and':[{'$text': {'$search': '\"Wired controller compatible\"'}}, {'ProductId': '182'}]}
             return dbo.collection("Products").find(query).toArray(function (err, result) {
                 if (err) throw err;
                 return callback(result);
