@@ -136,8 +136,22 @@
                         </div>
                         
                         <div id='fbComments'></div>
+                        <script>
+                            var products = JSON.parse(window.sessionStorage.getItem("queryResult"));
+                            var urlParams = new URLSearchParams(window.location.search);
+                            var product = {};
+                            if (products != null) {
+                                product = products.find(element => element.ProductId === urlParams.get("ProductId"));
+                            }
+                            const fbDiv = document.createElement('div');
+                            fbDiv.setAttribute('class', 'fb-comments');
+                            fbDiv.setAttribute('data-href','https://assistivetechlib.herokuapp.com/product-page.html?ProductId=' + product.ProductId);
+                            fbDiv.setAttribute('data-numposts', 10);
+                            fbDiv.setAttribute('data-width', 540);
+                            $('#fbComments').append(fbDiv);                        
+                        </script>
 
-                        <!-- <div class="fb-comments" data-href="https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51" data-numposts="5" data-width=""></div> -->
+                        <div class="fb-comments" data-href="https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51" data-numposts="5" data-width=""></div>
 
                     </div>
                 </div>
