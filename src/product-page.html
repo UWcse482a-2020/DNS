@@ -136,18 +136,7 @@
                         </div>
                         
                         <div id='fbComments'></div>
-                        <script>
-                            var products = JSON.parse(window.sessionStorage.getItem("queryResult"));
-                            var urlParams = new URLSearchParams(window.location.search);
-                            var product = {};
-                            if (products != null) {
-                                product = products.find(element => element.ProductId === urlParams.get("ProductId"));
-                            }
-                           $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
-
-                        </script>
-
-                        <div class="fb-comments" data-href="https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51" data-numposts="5" data-width=""></div>
+                        <!-- <div class="fb-comments" data-href="https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51" data-numposts="5" data-width=""></div> -->
 
                     </div>
                 </div>
@@ -278,6 +267,11 @@
     <script src="../js/mixitup.min.js"></script>
     <script src="../js/main.js"></script>
     <script type="text/javascript" src="../js/buildProductPage.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        var urlParams = new URLSearchParams(window.location.search);
+       $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + urlParams.get("ProductId") + "\' data-numposts='10' data-width='540'></div>");
+    </script>
+
 </body>
 
 </html>
