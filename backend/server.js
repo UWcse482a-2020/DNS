@@ -37,6 +37,16 @@ const taxonomy = fs.readFileSync(
   'utf8',
 )
 
+const about = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/about.html'),
+  'utf8',
+)
+
+const contact = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/contact.html'),
+  'utf8',
+)
+
 app.get('/api/healthcheck', (req, res) => {
   return res.send('Healthy!')
 })
@@ -125,6 +135,8 @@ app.use('/register.html', (req, res) => res.send(register))
 app.use('/login.html', (req, res) => res.send(login))
 app.use('/profile.html', (req, res) => res.send(profile))
 app.use('/taxonomy.html', (req, res) => res.send(taxonomy))
+app.use('/about.html', (req, res) => res.send(about))
+app.use('/contact.html', (req, res) => res.send(contact))
 app.use('/', (req, res) => res.send(index))
 
 const port = process.env.PORT || 8081;
