@@ -44,7 +44,7 @@ const validFeatures = {
     "touch-input": "Touch input features",
     "textured": "Has textural differences",
     "switch-acc": "Accessible by ability switches",
-    "eye-acc": "Acessible by eye-tracking devices",
+    "eye-acc": "Accessible by eye-tracking devices",
     "accessible by voice interface?": "Accessible by voice-interface",
 }
 
@@ -165,14 +165,4 @@ function setupProduct(product) {
     Object.keys(validFeatures).forEach(function (key) {
         $('#features-product').append("<li tabindex='0'>" + validFeatures[key] + ": " + product[key] + "</li>")
     })
-    // parseInt(product.ProductId)
-    // const fbDiv = document.createElement('div');
-    // fbDiv.setAttribute('class', 'fb-comments');
-    // fbDiv.setAttribute('data-href','https://assistivetechlib.herokuapp.com/product-page.html?ProductId=' + product.ProductId);
-    // fbDiv.setAttribute('data-numposts', 10);
-    // fbDiv.setAttribute('data-width', 540);
-    // $('#fbComments').append(fbDiv);
-    
-    // $('#fbComments').append('<div class="fb-comments" data-href="https://assistivetechlib.herokuapp.com/product-page.html?ProductId=51" data-numposts="5" data-width=""></div>');
-    // $('#fbComments').append("<div class='fb-comments' data-href='https://assistivetechlib.herokuapp.com/product-page.html?ProductId=" + product.ProductId + "\' data-numposts='10' data-width='540'></div>");
 }

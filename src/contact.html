@@ -25,10 +25,6 @@
 </head>
 
 <body>
-    <!-- Page Preloder
-    <div id="preloder">
-        <div class="loader"></div>
-    </div> -->
     
     <!-- Search model -->
 	<div class="search-model">
@@ -78,56 +74,46 @@
     </header>
     <!-- Header End -->
 
-    <!-- Page Add Section Begin -->
-    <section class="page-add">
+    <!-- Content Start -->
+    <section class="latest-products spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="page-breadcrumb">
-                        <h2>Register<span>.</span></h2>
+            <div class="product-filter">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div>
+                            <div class="section-title" tabindex="0">
+                                <h3>Team Members</h3>
+                            </div>
+
+                            <div id="team">
+                                <div class="about-teammember">
+                                    <p class="p-content">Sonya Lao</p>
+                                    <p class="p-content">Sonya is a junior at the University of Washington.</p>
+                                    <p class="p-content">Email: solao@cs.washington.edu | <a href="https://www.linkedin.com/in/sonyalao/">LinkedIn</a></p>
+                                </div>
+
+                                <div class="about-teammember">
+                                    <p class="p-content">Dan Le</p>
+                                    <p class="p-content">Dan is a senior at the University of Washington.</p>
+                                    <p class="p-content">Email: led1@cs.washington.edu | <a>LinkedIn Unavailable</a></p>
+                                </div>
+
+                                <div class="about-teammember">
+                                    <p class="p-content">Nathan Chen</p>
+                                    <p class="p-content">Nathan is a junior at the University of Washington.</p>
+                                    <p class="p-content">Email: nchen5@cs.washington.edu | <a href="https://www.linkedin.com/in/nchen5/">LinkedIn</a></p>
+                                </div>
+                            </div>
+                    
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Page Add Section End -->
 
-    <!-- Contact Section Begin -->
-    <div class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <p id='registerError' style = "color:red;font-size:18px" ></p>
-                    <form onsubmit="register(this);return false" class="contact-form">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input name="username" type="text" placeholder="Username" autocomplete="off" required>
-                            </div>
-                            <div class="col-lg-12">
-                                <input name="email" type="email" placeholder="E-mail"autocomplete="off"  required>
-                                <input id = "password" name="password" type="password" placeholder="Password" autocomplete="off" required>
-                                <input name="confirm_password" type="password" placeholder="Confirm Password" autocomplete="off" required oninput="check(this)">
-                                <script language='javascript' type='text/javascript'>
-                                    function check(input) {
-                                        if (input.value != document.getElementById('password').value) {
-                                            input.setCustomValidity('Password Must be Matching.');
-                                        } else {
-                                            // input is valid -- reset the error message
-                                            input.setCustomValidity('');
-                                        }
-                                    }
-                                </script>
-                            </div>
-                            <div class="col-lg-12 text-left">
-                                <button type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>            
-        </div>
-    </div>
-    <!-- Contact Section End -->
+
+    <!-- Content End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section spad">

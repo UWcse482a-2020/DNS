@@ -102,6 +102,14 @@ p {
 	font-family: "Montserrat", sans-serif;
 }
 
+.p-content { 
+	font-size: 18px;
+	color: #1e1e1e;
+	font-weight: 500;
+	/* line-height: 1.6; */
+	font-family: "Montserrat", sans-serif;
+}
+
 
 
 img {
@@ -119,7 +127,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #fff;
+	/* color: #fff; */
 }
 
 ul,
@@ -2599,8 +2607,8 @@ ol {
 
 .search-tag-container { 
 	margin-top: 10px;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .search-tag-close { 
@@ -2678,4 +2686,12 @@ ol {
 		0 1px 2px rgba(0,0,0,0.25),
 		inset 0 -1px 0 rgba(0,0,0,0.25),
 		inset 0 -45px 45px -45px #b1dcff; */
+}
+
+.about-container { 
+	margin-top: 20px;
+}
+
+.about-teammember { 
+	margin-bottom: 40px;
 }
