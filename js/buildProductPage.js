@@ -88,8 +88,8 @@ function setupProduct(product) {
 
     // Menu Stuff
     $('#breadcrumb').append("<h2 tabindex='0'>" + product.Name + "</h2>")
-    $('#breadcrumb').append("<a href='#' tabindex='0'>All Products / </a>")
-    $('#breadcrumb').append("<a class='active' href='./categories.html' tabindex='0'>" + product.Type + "</a>")
+    $('#breadcrumb').append("<a href='./categories.html' tabindex='0'>< Back to Search Results </a>")
+    // $('#breadcrumb').append("<a class='active' href='./categories.html' tabindex='0'>" + product.Type + "</a>")
 
     // Photo stuff
     const img_prodImg = document.createElement('img')

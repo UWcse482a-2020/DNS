@@ -29,6 +29,10 @@ function getQueryString() {
     var queryString = {};
     var productTypes = [];
     var features = [];
+    var andClause = {"$and": []};
+    var orClause = {"$or": []};
+    var textClause = {};
+    var searchBarVal = document.getElementById("search-bar").value;
     $("#tags li").each(function() {
         let tagText = $(this).text();
         let content = tagText.substr(0, tagText.length - 1);
@@ -38,36 +42,51 @@ function getQueryString() {
             features.push(content);
         }
     });
-    if (productTypes.length > 1) {
+    if (searchBarVal !== null) {
+        // wrap in double quotes for an exact phrase search
+        searchBarVal = "\"" + searchBarVal + "\"";
+        textClause["$text"] = {'$search': searchBarVal};
+    }
+    if (productTypes.length == 0 && features.length == 0 && textClause != {}) {
+        queryString = textClause;
+    } else if (productTypes.length > 1) {
         // Allow for Multiple product type searches with the OR operator
-        var orClause = {"$or": []};
         productTypes.forEach((content) => {
             orClause["$or"].push({"Type": content});
         })
-        var andClause = {"$and": [orClause]};
+        andClause["$and"].push(orClause);
         features.forEach((content) => {
             var feature = {};
             feature[content] = "yes";
             andClause["$and"].push(feature);
         })
+        andClause["$and"].push(textClause);
         queryString = andClause;
     } else if (features.length > 1 && productTypes.length == 0) {
-        var orClause = {"$or": []};
+        // If no product type selected, OR add feature tags
         features.forEach((content) => {
             var feature = {};
             feature[content] = "yes";
             orClause["$or"].push(feature);
-        })
-        queryString = orClause;
-    } 
+        });
+        andClause["$and"].push(textClause);
+        andClause["$and"].push(orClause);
+        queryString = andClause;
+    }
     else {
-        // implicit AND operator is used
+        // 1 product type, 1 or more features
         productTypes.forEach((content) => {
-            queryString["Type"] = content;
+            //queryString["Type"] = content;
+            andClause["$and"].push({"Type":content});
         })
         features.forEach((content) => {
-            queryString[content] = "yes";
+            //queryString[content] = "yes";
+            var feature = {};
+            feature[content] = "yes";
+            andClause["$and"].push(feature);
         })
+        andClause["$and"].push(textClause);
+        queryString = andClause;
     }
     var Q = {
         query: queryString
