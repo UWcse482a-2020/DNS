@@ -2805,4 +2805,5 @@ ol {
     outline: none;
 }
 
+.checkitem {white-space: nowrap; display:inline  }
 
