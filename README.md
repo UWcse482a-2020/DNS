@@ -46,8 +46,10 @@ File structure breakdown:
 ```
 project
 │   README.md
-│   products.csv is the sample product csv file, it is used to populate the mongodb database
-│
+|
+└───sample_csv_files
+│   │   sample-products.csv contains the example csv file that should be used as a model for the Products collection in mongodb
+│   │   sample-tags.csv contains the example csv file that should be used as a model for the Tags collection in mongodb
 └───backend
 │   │   server.js contains the express server used to route pages and handle GET requests
 │   │   connect.js uses the mongodb nodejs driver to make all of the application's database calls
