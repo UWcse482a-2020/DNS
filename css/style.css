@@ -2695,3 +2695,13 @@ ol {
 .about-teammember { 
 	margin-bottom: 40px;
 }
+
+.comment-prompter { 
+	font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	/* padding: 0.25em 0.55em;
+	border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 1em; */
+}
