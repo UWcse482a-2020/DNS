@@ -1,0 +1,23 @@
+_id,category,value
+5ed1e8de033a5a67b6349f2e,type,Switch
+5ed1e95b033a5a67b6349f2f,type,Toy
+5ed1e96b033a5a67b6349f30,type,Video Game Accessories
+5ed1e9b8033a5a67b6349f31,type,Mount
+5ed1ea25033a5a67b6349f32,type,Switch Interface
+5ed1ea77033a5a67b6349f33,type,Environmental Control
+5ed1eb16033a5a67b6349f34,type,Adapter
+5ed1eb28033a5a67b6349f35,type,Computer Interface
+5ed1eb70033a5a67b6349f37,feature,sound-off
+5ed1ebb1033a5a67b6349f38,feature,sound-loud
+5ed1ebc3033a5a67b6349f39,feature,Moves
+5ed1ebcf033a5a67b6349f3a,feature,lights-off
+5ed1ebdf033a5a67b6349f3b,feature,lights-bright
+5ed1ebf1033a5a67b6349f3c,feature,av-alt
+5ed1ebfc033a5a67b6349f3e,feature,input-small
+5ed1ec07033a5a67b6349f3f,feature,input-difficult
+5ed1ec1d033a5a67b6349f40,feature,touch-input
+5ed1ec28033a5a67b6349f41,feature,textured
+5ed1ec33033a5a67b6349f42,feature,switch-acc
+5ed1ec42033a5a67b6349f43,feature,eye-acc
+5ed1ed55033a5a67b6349f45,type,Mouse
+5edd5fc121b7102c443f3332,feature,accessible by voice interface?
