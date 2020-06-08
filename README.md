@@ -1,13 +1,13 @@
 # Setup
-To run the application locally, first clone this Github repository
-You must have node (https://nodejs.org/) installed in order to run this node application
+1. To run the application locally, first clone or download the master folder from the Github repository https://github.com/UWcse482a-2020/DNS. 
+2. Download and install nodejs from https://nodejs.org/en/download/
+3. Navigate to the DNS folder in the terminal using the command `cd DNS`.
+4. Run `npm init` to download the necessary packages for the application
+5. Run `npm run start` to start a server on your machine, hosted on localhost port 8081
+6. You should see the message “server successfully started on port 8081” returned in the terminal
+7. Access the website by accessing `localhost:8081` in your browser
+8. To view the website hosted at a public url, visit https://assistivetechlib.herokuapp.com/
 
-Once node is installed, issue the following commands in your terminal: 
-1. `cd DNS` to navigate to the DNS folder
-2. `npm init` to download the necessary packages for the application
-3. `npm run start` to start a server on your machine, hosted on port 8081
-You should see the message “server successfully started on port 8081” returned in the terminal
-Access the website by accessing `localhost:8081` in your browser
 
 # About the application
 File structure breakdown:
