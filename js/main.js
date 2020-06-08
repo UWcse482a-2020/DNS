@@ -13,7 +13,7 @@ $(document).ready(function() {
     // check if user is logged in
     if(window.sessionStorage.getItem("loggedIn") == "true") {
         $('.user-access').empty();
-        $('.user-access').append("<div class='user-access'><a id = 'profilepage' href='./profile.html' tabindex='0'>Profile</a><a href='./logout.html' class='in' tabindex='0'>Logout</a></div>");
+        $('.user-access').append("<a id = 'profilepage' href='./profile.html' tabindex='0'>Profile</a><a href='./logout.html' class='in' tabindex='0'>Logout</a>");
     }
 });
 
