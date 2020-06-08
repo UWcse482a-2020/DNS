@@ -22,15 +22,18 @@ project
 │   │   imgur.js is a one-time script that is run to generate an imgur link for each product in the database that has a google drive image link
 |
 └───src
-│   │   index.html
-│   │   categories.html
+│   │   index.html homepage
+│   │   categories.html search results page
+│   │   product-page.html individual product page
+|   ...
 |
 └───js
 │   │   main.js contains the front end javascript used across all html pages
 │   │   buildProductGrid.js dynamically populates the categories.html page based on the user query
 │   │   buildProductPage.js dynamically populates the product-page.html page based on the user click
+|   ...
 |
 └───css contains the styling for the website
 └───fonts contains the fonts used on the website
-|
+└───img contains the locally saved images used on the website
 ```
