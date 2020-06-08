@@ -1,15 +1,19 @@
+// map to store the readable tag to Product db version
+var readableToDbVersion = {};
+
 // dynamically put in dropdown options
 $.get("/getTags", function (data) {
     typeTags = data[0];
     featureTags = data[1];
     console.log("retrieving tags");
-    console.log(typeTags);
-    console.log(featureTags);
+    //console.log(typeTags);
+    //console.log(featureTags);
     typeTags.forEach(function (item, index) {
-      $("#tag-select").append("<option>" + item + "</option>");
+      $("#tag-select").append("<option>" + item["value"] + "</option>");
     });
     featureTags.forEach(function (item, index) {
-      $("#feature-select").append("<option>" + item + "</option>");
+      $("#feature-select").append("<option>" + item["readable-value"] + "</option>");
+      readableToDbVersion[item["readable-value"]] = item["value"];
     });
   });
 
@@ -22,7 +26,7 @@ function searchButtonClick() {
         window.sessionStorage.removeItem("userQuery");
         window.sessionStorage.setItem("userQuery", JSON.stringify(query));
         window.location.href = "categories.html";
-    })    
+    })
 }
 
 function getQueryString() {
@@ -39,10 +43,11 @@ function getQueryString() {
         if ($(this).hasClass("device-type")) {
             productTypes.push(content);
         } else {
-            features.push(content);
+            features.push(readableToDbVersion[content]);
         }
-    });
-    if (searchBarVal !== null) {
+    })
+    // Check if the text bar is empty
+    if (searchBarVal !== "") {
         // wrap in double quotes for an exact phrase search
         searchBarVal = "\"" + searchBarVal + "\"";
         textClause["$text"] = {'$search': searchBarVal};
@@ -91,7 +96,7 @@ function getQueryString() {
     var Q = {
         query: queryString
     };
-    return Q;
+    return Q;    
 }
 
 /*-------------------
