@@ -19,11 +19,15 @@ var methods = {
         console.log("entered getTags")
         client.connect(function (err, db) {
             var dbo = db.db("AssistiveTechLib");
-            var key = query["category"] === "feature" ? "readable-value" : "value";
-            return dbo.collection("Tags").distinct(key, query, function (err, result) {
+            // var key = query["category"] === "feature" ? "readable-value" : "value";
+            // return dbo.collection("Tags").distinct(key, query, function (err, result) {
+            //     if (err) throw err;
+            //     return callback(result);
+            // });
+            return dbo.collection("Tags").find(query).toArray(function(err, result) {
                 if (err) throw err;
                 return callback(result);
-            });
+            })
         });
     },
 

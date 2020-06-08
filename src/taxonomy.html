@@ -22,10 +22,6 @@
     <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
-    <style>
-        .checkitem {white-space: nowrap;display:inline  }
-    </style>
 </head>
 
 <body>
@@ -103,72 +99,36 @@
                 <div class="col-lg-8">
                     <p id='taxonomyError' style = "color:red;font-size:18px" ></p>
                     <form id="taxonomyForm" onsubmit="taxonomy(this);return false;" class="contact-form">
-                        <div class="col-lg-6">
+                        <div class="col-lg-12">
                             <p>Type of Access</p>
-                            <div class = "checkitem">
-                                <label for="access1">Switch</label>
-                                <input type="checkbox" id="access1" name="access1" value="switch-acc">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="access2">Touch</label>
-                                <input type="checkbox" id="access2" name="access2" value="touch-input">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="access3">Eye</label>
-                                <input type="checkbox" id="access3" name="access3" value="eye-acc">
-                            </div>
+                            <label><input type="checkbox" id="access1" name="access1" value="switch-acc"/>Switch</label>
+                            <label><input type="checkbox" id="access2" name="access2" value="touch-input"/>Touch</label>
+                                <label for="access3"><input type="checkbox" id="access3" name="access3" value="eye-acc"/>Eye</label>
                         </div>
                         <br>
                         <div class="col-lg-12">
                             <p>Input Type</p>
-                            <div class = "checkitem">
-                                <label for="input1">Difficult</label>
-                                <input type="checkbox" id="input1" name="input1" value="input-difficult">  
-                            </div>
-                            <div class = "checkitem">
-                                <label for="input2">Small</label>
-                                <input type="checkbox" id="input2" name="input2" value="input-small">
-                            </div>
+                            <label><input type="checkbox" id="input1" name="input1" value="input-difficult">Difficult</label>
+                            <label><input type="checkbox" id="input2" name="input2" value="input-small">Small</label>
                         </div>
                         <br>
                         <div class="col-lg-12">
                             <p>Light options</p>
-                            <div class = "checkitem">
-                                <label for="light1">Bright</label>
-                                <input type="checkbox" id="light1" name="light1" value="lights-bright">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="light2">Off</label>
-                                <input type="checkbox" id="light2" name="light2" value="lights-off">
-                            </div>
+                            <label><input type="checkbox" id="light1" name="light1" value="lights-bright">Bright</label>
+                            <label><input type="checkbox" id="light2" name="light2" value="lights-off">Off</label>
                         </div>
                         <br>
                         <div class="col-lg-12">
                             <p>Sound options</p>
-                            <div class = "checkitem">
-                                <label for="sound1">Loud</label>
-                                <input type="checkbox" id="sound1" name="sound1" value="sound-loud">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="sound2">Off</label>
-                                <input type="checkbox" id="sound2" name="sound2" value="sound-off">
-                            </div>
+                            <label><input type="checkbox" id="sound1" name="sound1" value="sound-loud">Loud</label>
+                            <label><input type="checkbox" id="sound2" name="sound2" value="sound-off">Off</label>
                         </div>
                         <br>
                         <div class="col-lg-12">
                             <p>Other Features</p>
-                            <div class = "checkitem">
-                                <label for="feature1">Moves</label>
-                                <input type="checkbox" id="feature1" name="feature1" value="Moves">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="feature2">Audio and visual output alternatives</label>
-                                <input type="checkbox" id="feature2" name="feature2" value="av-alt">
-                            </div>
-                            <div class = "checkitem">
-                                <label for="feature3">Textured</label>
-                                <input type="checkbox" id="feature3" name="feature3" value="textured">
-                            </div>
+                            <label><input type="checkbox" id="feature1" name="feature1" value="Moves">Moves</label>
+                            <label><input type="checkbox" id="feature2" name="feature2" value="av-alt">Audio and visual output alternatives</label>
+                            <label><input type="checkbox" id="feature3" name="feature3" value="textured">Textured</label>
                         </div>
                         <br>
                         <div class="col-lg-12 text-left">

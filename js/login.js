@@ -17,6 +17,7 @@ function login(info) {
     $.get("/login", $.param(loginInfo), function (data) {
         if (data == "Log in Successful") {
             $('#loginError').css("color", "blue");
+            $('#loginError').text(data);
             window.sessionStorage.setItem("loggedIn", "true");
             window.sessionStorage.setItem("username", loginInfo.username);
             window.sessionStorage.removeItem("Default_tags");
@@ -25,8 +26,8 @@ function login(info) {
             window.location.href = "index.html";
         } else {
             $('#loginError').css("color", "red");
+            $('#loginError').text(data);
         }
-        $('#loginError').text(data);
         console.log(data);
     })
 }
