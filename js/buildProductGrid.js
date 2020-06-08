@@ -15,7 +15,7 @@ function setupCard(product, cardNum) {
     const figure = document.createElement('figure')
 
     const img = document.createElement('img')
-    var imageLink = product.Image.substring(0,6) === "../img" ? product.Image : product.ImgurLink;
+    var imageLink = product.Image.substring(0, 6) === "../img" ? product.Image : product.ImgurLink;
     img.setAttribute('src', imageLink)
     img.setAttribute('alt', 'Image of ' + product.Name)
 
@@ -40,11 +40,11 @@ function setupCard(product, cardNum) {
     a_product.append(h6_product)
 
     $("#productgrid").append(div_singleProd);
-    
+
 }
 
 function parseDisplayableTag(element, tag) {
-    if (tag === "Type") {
+    if (tag === "Type" || tag === "$search") {
         return element[tag];
     } else {
         return tag;
@@ -63,44 +63,57 @@ function buildTitleAndBreadcrumb() {
         userQuery["$or"].forEach((element) => {
             if (counter > 0) {
                 readableQuery += ", "
-            } 
-            var key = Object.getOwnPropertyNames(element)[0];
-            readableQuery += parseDisplayableTag(element, key);
-            counter++;
-          });
+            }
+            if (element != {}) {
+                var key = Object.getOwnPropertyNames(element)[0];
+                readableQuery += parseDisplayableTag(element, key);
+                counter++;
+            }
+        });
     } else if (userQuery.hasOwnProperty("$and")) {
         var counter = 0;
         userQuery["$and"].forEach((element) => {
             if (counter > 0) {
                 readableQuery += ", "
-            } 
-            var key = Object.getOwnPropertyNames(element)[0];
-            if (key === "$or") {
-              element["$or"].forEach((subel) => {
-                if (counter > 0) {
-                    readableQuery += ", "
-                } 
-                var key2 = Object.getOwnPropertyNames(subel)[0];
-                readableQuery += parseDisplayableTag(subel, key2);
-                counter++;
-              });
-            } else {
-                readableQuery += parseDisplayableTag(element, key)
             }
-            counter++;
-          });
-    }
-    else {
+            var key = Object.getOwnPropertyNames(element)[0];
+            if (key != undefined) {
+                if (key === "$or") {
+                    element["$or"].forEach((subel) => {
+                        if (counter > 0) {
+                            readableQuery += ", "
+                        }
+                        if (subel != {}) {
+                            var key2 = Object.getOwnPropertyNames(subel)[0];
+                            readableQuery += parseDisplayableTag(subel, key2);
+                            counter++;
+                        }
+                    });
+                } else if (key === "$text") {
+                    var string = parseDisplayableTag(element["$text"], "$search");
+                    readableQuery += string.substring(1, string.length - 1);
+                }
+                else {
+                    readableQuery += parseDisplayableTag(element, key);
+                }
+                counter++;
+            }
+
+        });
+    } else if (userQuery.hasOwnProperty("$text")) {
+        var string = parseDisplayableTag(userQuery["$text"], "$search");
+        readableQuery += string.substring(1, string.length - 1);
+    } else {
         var counter = 0;
         for (var x in userQuery) {
             if (counter > 0) {
                 readableQuery += ", "
-            } 
+            }
             readableQuery += parseDisplayableTag(userQuery, x);
             counter++;
         }
     }
-    
+
     $('.page-breadcrumb').append("<h2 class=\"col-lg-10\" tabindex='0'> " + products.length + " Search Results for \"" + readableQuery + "\"</h2>")
     if (!isBrowseAll) {
         $('.page-breadcrumb').append("<a href='./categories.html' tabindex='0' id='all-products'>All Products / </a>")
@@ -117,7 +130,7 @@ function setupGrid() {
         $("#productgrid").append(h5_text);
         $('#goback').append("<a href=\"./index.html\" class=\"primary-btn\">Search Again</a>")
     } else {
-        for (let cardNum = 0; cardNum < products.length; cardNum++) { 
+        for (let cardNum = 0; cardNum < products.length; cardNum++) {
             setupCard(products[cardNum], cardNum)
         }
     }
