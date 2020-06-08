@@ -47,6 +47,11 @@ const contact = fs.readFileSync(
   'utf8',
 )
 
+const logout = fs.readFileSync(
+  path.resolve(__dirname, '..', 'src/logout.html'),
+  'utf8',
+)
+
 app.get('/api/healthcheck', (req, res) => {
   return res.send('Healthy!')
 })
@@ -137,6 +142,7 @@ app.use('/profile.html', (req, res) => res.send(profile))
 app.use('/taxonomy.html', (req, res) => res.send(taxonomy))
 app.use('/about.html', (req, res) => res.send(about))
 app.use('/contact.html', (req, res) => res.send(contact))
+app.use('/logout.html', (req, res) => res.send(logout))
 app.use('/', (req, res) => res.send(index))
 
 const port = process.env.PORT || 8081;
