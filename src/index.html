@@ -39,24 +39,16 @@
 
     <!-- Header Section Begin -->
     <header class="header-section">
-        <div class="container-fluid">
+        <div class="container-fluid" tabindex=0>
             <div class="inner-header">
                 <div class="logo" tabindex="0">
                     <a href="./index.html" tabindex="0"><img src="../img/logo.png" alt=""></a>
                 </div>
-                <!-- <div class="header-right">
-                    <img src="../img/icons/search.png" alt="" class="search-trigger">
-                    <img src="../img/icons/man.png" alt="">
-                    <a href="#">
-                        <img src="../img/icons/bag.png" alt="">
-                        <span>2</span>
-                    </a>
-                </div> -->
                 <div class="user-access">
                     <a href="./register.html" tabindex="0">Register</a>
                     <a href="./login.html" class="in" tabindex="0">Sign in</a>
                 </div>
-                <nav class="main-menu mobile-menu" tabindex="0">
+                <nav class="main-menu mobile-menu">
                     <ul>
                         <li><a class="p-header" href="./index.html" tabindex="0">Home</a></li>
                         <li><div id="browse-all" style="cursor: pointer;"><p class="p-header" style="font-size: 20; font-weight: 500;" tabindex="0">Browse</p></div>
@@ -82,7 +74,7 @@
             <div class="product-filter">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <div class="section-title" tabindex="0">
+                        <div class="section-title" tabindex="0" alt="Title">
                             <h2>Assistive Tech Lending Library</h2>
                         </div>
                         <div tabindex="0">
@@ -99,36 +91,27 @@
     <!-- Search Bar Begin -->
     <div class="container" style="padding-bottom: 80px;">
         <div class="row" style="display: flex; flex-wrap: wrap;margin-right: -15px; margin-left: -15px; justify-content: center;">
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Product Type</p>
+                <div class="col-lg-3" style="display:inline-block" >
+                    <p class="p-search" tabindex="0">Product Type</p>
                     <!-- audtocomplete="off" for firefox behavior -->
-                    <select id="tag-select" autocomplete="off" class='select-css'>
+                    <select id="tag-select" autocomplete="off" class='select-css' tabindex="0">
                         <option disabled selected value> -- select an option -- </option>
                     </select>
                 </div>
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Features</p>
-                    <select id="feature-select" autocomplete="off" class='select-css'>
+                <div class="col-lg-3" style="display:inline-block" >
+                    <p class="p-search" tabindex="0">Features</p>
+                    <select id="feature-select" autocomplete="off" class='select-css' tabindex="0">
                         <option disabled selected value> -- select an option -- </option>
                     </select>
                 </div>
-                <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Search Bar</p>
-                    <input class="search-input" type="text" id="search-bar" placeholder="Search on keyword..." autocomplete="off">
+                <div class="col-lg-3" style="display:inline-block">
+                    <p class="p-search" tabindex="0">Search Bar</p>
+                    <input class="search-input" type="text" id="search-bar" placeholder="Search on keyword..." autocomplete="off" tabindex="0">
                 </div>
-                <div class="col-lg-2" style="display:inline-block" tabindex="0">
-                    <p class="p-search">Search</p>
-                    <button id="search-btn" class='b-primary'>Search</button>
+                <div class="col-lg-2" style="display:inline-block">
+                    <p class="p-search" tabindex="0">Search</p>
+                    <button id="search-btn" class='b-primary' tabindex="0">Search</button>
                 </div>
-                <!--
-                <div>
-                    <p>Voluntary Muscle Movement</p>
-                    <select id="muscle-select">
-                        <option>Arm</option>
-                    </select>
-                </div>
-                <p></p>
-                -->
         </div>
         <div class='search-tag-container'>
             <ul id='tags' style="font-size: 18px;"></ul>

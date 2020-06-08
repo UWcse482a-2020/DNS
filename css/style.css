@@ -116,6 +116,16 @@ img {
 	max-width: 100%;
 }
 
+img:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+
 input:focus,
 select:focus,
 button:focus,
@@ -123,12 +133,21 @@ textarea:focus {
 	outline: none;
 }
 
-a:hover,
-a:focus {
+a:hover {
 	text-decoration: none;
 	outline: none;
 	/* color: #fff; */
 }
+
+a:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
 
 ul,
 ol {
@@ -350,10 +369,30 @@ ol {
 	line-height: 50px;
 }
 
+/* Focus style */
+.inner-header .user-access a:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
 .inner-header .user-access a.in {
 	color: #1e1e1e;
 	margin-left: 15px;
 	position: relative;
+}
+
+/* Focus style */
+.inner-header .user-access a.in:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
 }
 
 .inner-header .user-access a.in::before {
@@ -383,6 +422,8 @@ ol {
 	position: relative;
 	line-height: 50px;
 }
+
+
 
 .inner-header .main-menu ul li a.active:after {
 	opacity: 1;
@@ -817,6 +858,16 @@ ol {
 	min-width: 100%;
 }
 
+.single-product-item figure img:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+
 .single-product-item figure .p-status {
 	position: absolute;
 	left: 20px;
@@ -844,6 +895,17 @@ ol {
 	color: #727272;
 	margin-bottom: 15px;
 }
+
+.single-product-item .product-text h6:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+
 
 .single-product-item .product-text p {
 	color: #1e1e1e;
@@ -1107,6 +1169,15 @@ ol {
 	margin-right: 6px;
 	margin-left: 3px;
 	position: relative;
+}
+
+.page-add .page-breadcrumb a:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
 }
 
 .page-add .page-breadcrumb a.active {
@@ -2705,3 +2776,14 @@ ol {
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
     border-radius: 1em; */
 }
+
+.comment-prompter:focus {
+    border-color: #aaa;
+    /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222; 
+    outline: none;
+}
+
+

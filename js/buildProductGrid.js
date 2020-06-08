@@ -6,11 +6,12 @@ function setupCard(product, cardNum) {
     const div_singleProd = document.createElement('div')
     div_singleProd.setAttribute('class', "single-product-item")
     div_singleProd.setAttribute('style', "position: relative; width: 25%; padding-right: 15px; padding-left: 15px;")
-    div_singleProd.setAttribute('tabindex', '0')
 
     const a_img = document.createElement('a')
     a_img.setAttribute('id', 'a_img_href' + cardNum)
     a_img.setAttribute('href', './product-page.html?ProductId=' + product.ProductId)
+    a_img.setAttribute('tabindex', '0')
+
 
     const figure = document.createElement('figure')
 
@@ -30,6 +31,7 @@ function setupCard(product, cardNum) {
 
     const h6_product = document.createElement('h6')
     h6_product.innerHTML = product.Name
+    h6_product.setAttribute('tabindex', '0')
 
     div_singleProd.append(a_img)
     a_img.append(figure)
