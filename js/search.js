@@ -20,9 +20,19 @@ $(document).ready(function () {
       readableToDbVersion[item["readable-value"]] = item["value"];
       DbToreadableVersion[item["value"]] = item["readable-value"];
     });
-
-    // check if user is logged in
-    if (window.sessionStorage.getItem("loggedIn") == "true") {
+    if(window.sessionStorage.getItem("tags") !== null) {
+      var tags = JSON.parse(window.sessionStorage.getItem("tags"));
+      console.log(tags);
+      tags.forEach(function (item, index) {
+        console.log("added to tag column");
+        $("#tags").append(
+          "<li class='device-type' tabindex=0>" +
+            DbToreadableVersion[item] +
+            "<button class='search-tag-close' tabindex=0>x</button></li>"
+        );
+      });
+    } else if (window.sessionStorage.getItem("loggedIn") == "true") {
+      // check if user is logged in
       var username = window.sessionStorage.getItem("username");
       var defaultTagList = [];
       $.get("/getDefaultTags", $.param({ username: username }), function (
@@ -50,14 +60,26 @@ $(document).ready(function () {
 document
   .getElementById("search-btn")
   .addEventListener("click", searchButtonClick);
-function searchButtonClick() {
-  var query = getQueryString();
-  $.get("/searchquery", $.param(query), function (data) {
-    window.sessionStorage.removeItem("queryResult");
-    window.sessionStorage.setItem("queryResult", JSON.stringify(data));
-    window.sessionStorage.removeItem("userQuery");
-    window.sessionStorage.setItem("userQuery", JSON.stringify(query));
-    window.location.href = "categories.html";
+  function searchButtonClick() {
+    var query = getQueryString();
+    $.get("/searchquery", $.param(query), function (data) {
+      tags= []
+      $("#tags li").each(function () {
+        let tagText = $(this).text();
+        let content = tagText.substr(0, tagText.length - 1);
+        if ($(this).hasClass("device-type")) {
+          //tags.push(content);
+        } else {
+          tags.push(readableToDbVersion[content]);
+        }
+      });
+      window.sessionStorage.removeItem("tags");
+      window.sessionStorage.setItem("tags", JSON.stringify(tags));
+      window.sessionStorage.removeItem("queryResult");
+      window.sessionStorage.setItem("queryResult", JSON.stringify(data));
+      window.sessionStorage.removeItem("userQuery");
+      window.sessionStorage.setItem("userQuery", JSON.stringify(query));
+      window.location.href = "categories.html";
   });
 }
 
