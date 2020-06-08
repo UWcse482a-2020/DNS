@@ -369,6 +369,15 @@ ol {
 	line-height: 50px;
 }
 
+.inner-header .user-access a:hover {
+	color: #1e1e1e;
+	font-size: 20px;
+	display: inline-block;
+	font-weight: 500;
+	position: relative;
+	line-height: 50px;
+}
+
 /* Focus style */
 .inner-header .user-access a:focus {
     border-color: #aaa;
@@ -483,6 +492,17 @@ ol {
 	padding: 0px 20px;
 	font-size: 18px;
 	line-height: 2.3;
+}
+
+.inner-header .main-menu ul li .sub-menu li a:hover {
+	display: block;
+	color: rgb(0, 0, 0);
+	font-weight: 600;
+	margin-right: 0;
+	padding: 0px 20px;
+	font-size: 18px;
+	line-height: 2.3;
+	text-decoration: underline;
 }
 
 .inner-header .main-menu ul li .sub-menu li a:after {
