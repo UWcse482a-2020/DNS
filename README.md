@@ -1,3 +1,16 @@
+# About
+Assistive Tech Lending Library (ATLL)
+
+Affiliation:
+University of Washington Paul G. Allen School of Computer Science & Engineering - The Taskar Center for Accessible Technology
+
+Team: Dan Le led1@cs.washington.edu, Sonya Lao solao@cs.washington.edu, Nathan Chen nchen5@cs.washington.edu
+
+References and Stakeholders: 
+Anat Caspi (Course Instructor), Gabriel Laigo (PROVAIL Assistive Technologist), Sanath Kumar Ramesh (Parent Stakeholder)
+# Project Abstract
+Our website is a resource directory compiling information about accessible products like modified toys that are switch accessible, accessible environmental controls, and assistive technology. We aim to bridge the information gap between available assistive tech, product hacking instructions, and general retailer information with detailed accessibility descriptions for all levels of ability. This work is built on top of a paper-based tool developed by Occupation Therapists to help their patients find suitable assistive technologies. 
+
 To view the website hosted at a public url, visit https://assistivetechlib.herokuapp.com/
 
 # Installation
@@ -72,19 +85,7 @@ project
 └───img contains the locally saved images used on the website
 ```
 
-Assistive Tech Lending Library (ATLL)
-Affiliation
-University of Washington Paul G. Allen School of Computer Science & Engineering - The Taskar Center for Accessible Technology
-Team
-Dan Le - led1@cs.washington.edu
-Sonya Lao - solao@cs.washington.edu
-Nathan Chen - nchen5@cs.washington.edu
-References and Stakeholders
-Anat Caspi - Course Instructor
-Gabriel Laigo - PROVAIL Assistive Technologist
-Sanath Kumar Ramesh - Parent Stakeholder
-Project Abstract
-Our website is a resource directory compiling information about accessible products like modified toys that are switch accessible, accessible environmental controls, and assistive technology. We aim to bridge the information gap between available assistive tech, product hacking instructions, and general retailer information with detailed accessibility descriptions for all levels of ability. This work is built on top of a paper-based tool developed by Occupation Therapists to help their patients find suitable assistive technologies.  
+ 
 
 Image: Homepage of the Assistive Tech Lending Library
 # Project Goals
