@@ -173,7 +173,8 @@ This product did not satisfy the parameters of my query
 Additionally, we will ask the follow up question: “Are there any not-provided search tags you would like to add to the search interface: __________ [fill in the blank]”
 Data
 On average, our users spent 8-10 minutes on this task.
-<img src="readme_assets/productsclickedon.png" width="50%">
+
+<img src="readme_assets/productsclickedon.PNG" width="50%">
 
 Fill In the Blank Responses
 Feature tags should be more descriptive and clear in their wording 
@@ -196,7 +197,7 @@ I cannot tell because some information is missing
 If previous answer was c), the information missing was as follows: _____ [fill in the blank]”
 Data
 On average, our users spent 3 minutes reading each product page
-<img src="readme_assets/abcresponses.png" width="50%">
+<img src="readme_assets/abcresponses.PNG" width="50%">
 
 “C” Fill in the Blank Responses:
 Product make/material/dimensions information 
@@ -215,8 +216,8 @@ Likert scales: “Not Confident,” “Somewhat Not Confident,” “Neither Con
 Our three products featured 0 reviews, 3 good reviews, and 6 reviews (3 good 3 bad) respectively.
 Data
 On average, our users spent 15 minutes to complete the entire task
-<img src="readme_assets/review results.png" width="50%">
-<img src="readme_assets/reviewtochangegraph.png" width="50%">
+<img src="readme_assets/review results.PNG" width="50%">
+<img src="readme_assets/reviewtochangegraph.PNG" width="50%">
 
 
 Resulting Actions Taken
