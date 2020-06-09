@@ -13,7 +13,7 @@ Our website is a resource directory compiling information about accessible produ
 
 To view the website hosted at a public url, visit https://assistivetechlib.herokuapp.com/
 
-<img src="readme_assets/website.PNG" width="50%">
+<img src="readme_assets/website.PNG" width="75%">
 Image: Homepage of the Assistive Tech Lending Library
 
 # Installation
