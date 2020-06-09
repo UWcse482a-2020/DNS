@@ -122,37 +122,15 @@ Flow Diagram
 ## Database Model
 We used MongoDB, a NOSQL database, to store product information, users, and tags. This lets us perform queries on flexible data formats like csvs. 
 
-ProductID
-ProductName
-Description
-Video embed
-External link
-tags
-1
-Big Switch
-Lorem ipsum dolor sit amet
-<html stuff>
-www.testlink.com
-switch, etc
+<img src="readme_assets/productschema.PNG" width="70%">
 
 In addition, we will have separate tables for categorizing tags and other product information so that the original database will remain untouched while mappings can be reorganized manually. 
-Tag
-Type of tag
-switch
-category
-lights-bright
-feature
+
+<img src="readme_assets/tagschema.PNG" width="70%">
 
 Finally, we will have a 3rd table for user information and profiles. We can also encrypt passwords using MongoDB to provide extra security.
 
-UserId
-password
-email
-tags
-test_user
-3ncrypt3d
-test_user@test.com
-Touch_input, voice_interface, etc
+<img src="readme_assets/usertable.PNG" width="70%">
 
 ## Backend Process
 Our website is built on a MVC framework (model, view, controller) which is considered good architecture. The view is the front end and behind each page is some javascript code that responds to user input which then calls the backend model. By designing the website this way, the backend works like a blackbox that the front end doesn’t need to worry about how it is implemented. This makes it easy to use existing backend methods on future pages or add backend functions and give more functionality without breaking the front end. All of our website’s backend functionalities (ranging from dynamic product pages, searching, and user profiles) are all accessed through a REST API. This allows us to make calls to MongoDb from the backend, preventing users from maliciously making queries that could make harmful changes to the database. We used the node.js mongodb search implementation to access the database with JSON formatted queries. 
