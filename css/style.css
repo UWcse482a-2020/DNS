@@ -412,8 +412,8 @@ ol {
 }
 
 .inner-header .main-menu {
-	float: right;
-	margin-right: 150px;
+	/* float: right;
+	margin-right: 150px; */
 }
 
 .inner-header .main-menu ul li {
@@ -2167,12 +2167,13 @@ ol {
 
 @media only screen and (min-width: 1500px) and (max-width: 1920px) {
 	.inner-header .user-access {
-		float: right;
+		/* float: right; */
 		margin-right: 200px;
 	}
 	.inner-header .main-menu {
-		float: right;
-		margin-right: 238px;
+		/* float: right;
+		margin-right: 238px; */
+		text-align: center
 	}
 }
 
