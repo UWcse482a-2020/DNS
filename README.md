@@ -122,12 +122,20 @@ The user's decision can be informed by other's stakeholder input throughout the 
 ### Situation 2
 *Before*: The therapist knows what type of product their client needs but doesn’t know what brand will be best or affordable.
 
+<img src="readme_assets/storyboard_2_before.png" width="50%">
+
 *After*: The therapist can give their clients a search page where the client can view their options in a single place and can browse for additional information at their leisure.
+
+<img src="readme_assets/storyboard_2_after.png" width="50%">
 
 ### Situation 3
 *Before*: Person with disability is looking for products for themselves
 
+<img src="readme_assets/storyboard_3_before.png" width="50%">
+
 *After*: Our website will automatically add tags to match their conditions and suggest relevant products and resources. It will also have text to speech (and possibly speech to text for searching) to make it more accessible.
+
+<img src="readme_assets/storyboard_3_after.png" width="50%">
 
 ## Flow Diagram
 =======
