@@ -95,74 +95,43 @@
     <div class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <p id='taxonomyError' style = "color:red;font-size:18px" ></p>
-                    <form id="taxonomyForm" onsubmit="taxonomy(this);return false;" class="contact-form">
-                        <div class="col-lg-12">
-                            <p>Type of Access</p>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="access1" name="access1" value="switch-acc"/><label>Ability switch accessible</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="access2" name="access2" value="touch-input"/><label>Touch input</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="access3" name="access3" value="eye-acc"/><label for="access3">Eye tracking accessible</label>
-                            </div>
+                    <form id="taxonomyForm" onsubmit="taxonomy(this);return false;">
+                    <div class="col-lg-12">
+                            <h5>Type of Access</h5> <br>
+                            <label for="access1">Ability switch accessible<input type="checkbox" id="access1" name="access1" value="switch-acc"/></label><br>
+                            <label for="access2">Touch input<input type="checkbox" id="access2" name="access2" value="touch-input"/></label><br>
+                            <label for="access3">Eye tracking accessible<input type="checkbox" id="access3" name="access3" value="eye-acc"/></label><br>
                         </div>
                         <br>
                         <div class="col-lg-12">
-                            <p>Input Type</p>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="input1" name="input1" value="input-difficult"><label>Input features hard to manipulate</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="input2" name="input2" value="input-small"><label>Input features are small</label>
-                            </div>
+                            <h5>Input Type</h5> <br>
+                            <label>Input features hard to manipulate<input type="checkbox" id="input1" name="input1" value="input-difficult"></label> <br>
+                            <label>Input features are small<input type="checkbox" id="input2" name="input2" value="input-small"></label>
                         </div>
                         <br>
                         <div class="col-lg-12">
-                            <p>Light options</p>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="light1" name="light1" value="lights-bright"><label>Lights bright/pulsating</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="light2" name="light2" value="lights-off"><label>Lights can be off</label>
-                            </div>
+                            <h5>Light options</h5><br>
+                            <label>Lights bright/pulsating<input type="checkbox" id="light1" name="light1" value="lights-bright"></label><br>
+                            <label>Lights can be off<input type="checkbox" id="light2" name="light2" value="lights-off"></label>
                         </div>
                         <br>
                         <div class="col-lg-12">
-                            <p>Sound options</p>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="sound1" name="sound1" value="sound-loud"><label>Sounds are loud</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="sound2" name="sound2" value="sound-off"><label>Sounds can be off</label>
-                            </div>
+                            <h5>Sound options</h5><br>
+                            <label>Sounds are loud<input type="checkbox" id="sound1" name="sound1" value="sound-loud"></label><br>
+                            <label>Sounds can be off<input type="checkbox" id="sound2" name="sound2" value="sound-off"></label>
                         </div>
                         <br>
                         <div class="col-lg-12">
-                            <p>Other Features</p>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="feature1" name="feature1" value="Moves"><label>Moves</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="feature2" name="feature2" value="av-alt"><label>Audio/Visual alternatives</label>
-                            </div>
-                            <br>
-                            <div class = "checkitem">
-                                <input type="checkbox" id="feature3" name="feature3" value="textured"><label>Textured</label>
-                            </div>
+                            <h5>Other Features</h5><br>
+                            <label>Moves<input type="checkbox" id="feature1" name="feature1" value="Moves"></label><br>
+                            <label>Audio/Visual alternatives<input type="checkbox" id="feature2" name="feature2" value="av-alt"></label><br>
+                            <label>Textured<input type="checkbox" id="feature3" name="feature3" value="textured"></label>
                         </div>
                         <br>
                         <div class="col-lg-12 text-left">
-                            <button type="submit">Submit</button>
+                            <button type="submit" class="b-primary">Submit</button>
                         </div>
                     </form>
                 </div>
