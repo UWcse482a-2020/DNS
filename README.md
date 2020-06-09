@@ -117,7 +117,6 @@ The user's decision can be informed by other's stakeholder input throughout the 
 *After*: Caregiver can now find videos of products before purchasing and read reviews given by other people with similar needs. They can also find tutorials and useful links to other resources as well as reading reviews and interacting with other users who have used those products.
 
 <img src="readme_assets/storyboard_1_after.png" width="70%">
-<<<<<<< HEAD
 
 ### Situation 2
 *Before*: The therapist knows what type of product their client needs but doesn’t know what brand will be best or affordable.
@@ -130,12 +129,6 @@ The user's decision can be informed by other's stakeholder input throughout the 
 *After*: Our website will automatically add tags to match their conditions and suggest relevant products and resources. It will also have text to speech (and possibly speech to text for searching) to make it more accessible.
 
 ## Flow Diagram
-=======
- 
-Flow Diagram
-
-
->>>>>>> 79fdcce20811bda09957f5fe901b834bf5450141
 <img src="readme_assets/control flow.png" width="50%">
 
 
