@@ -2805,5 +2805,9 @@ ol {
     outline: none;
 }
 
-.checkitem {white-space: nowrap; display:inline  }
+.checkitem {white-space: nowrap; padding-left:100px  }
+
+label input {
+	margin-left:5px;
+}
 
