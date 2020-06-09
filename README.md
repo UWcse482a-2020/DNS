@@ -118,7 +118,11 @@ The user's decision can be informed by other's stakeholder input throughout the 
 <img src="readme_assets/storyboard_1_after.png" width="70%">
  
 Flow Diagram
+
+
 <img src="readme_assets/control flow.png" width="50%">
+
+
 ## Database Model
 We used MongoDB, a NOSQL database, to store product information, users, and tags. This lets us perform queries on flexible data formats like csvs. 
 
