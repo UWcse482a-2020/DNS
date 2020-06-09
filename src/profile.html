@@ -29,52 +29,52 @@
     <div id="preloder">
         <div class="loader"></div>
     </div> -->
-    
+
     <!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">+</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
-
-  <!-- Header Section Begin -->
-  <header class="header-section">
-    <div class="container-fluid" tabindex=0>
-        <div class="inner-header">
-            <div class="logo" tabindex="0">
-                <a href="./index.html" tabindex="0"><img src="../img/logo.png" alt=""></a>
-            </div>
-
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li><a class="p-header" href="./index.html" tabindex="0">Home</a></li>
-                    <li><a class="p-header" id="browse-all" style="cursor: pointer;">Browse</a>
-                        <ul class="sub-menu">
-                            <li><a href="#" id="browse-toy" tabindex="0">Toy</a></li>
-                            <li><a href="#" id="browse-switch" tabindex="0">Switch</a></li>
-                            <li><a href="#" id="browse-adapter" tabindex="0">Adapter</a></li>
-                            <li><a href="#" id="browse-mount" tabindex="0">Mount</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="p-header" href="./about.html" tabindex="0">About</a></li>
-                    <li><a class="p-header" href="./contact.html" tabindex="0">Contact Us</a></li>
-                    <li>
-                        <div class="user-access">
-                            <a href="./register.html" tabindex="0">Register</a>
-                            <a href="./login.html" class="in" tabindex="0">Sign in</a>
-                        </div>
-                    </li>
-                </ul>
-
-            </nav>
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
         </div>
     </div>
-</header>
-<!-- Header End -->
+    <!-- Search model end -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid" tabindex=0>
+            <div class="inner-header">
+                <div class="logo" tabindex="0">
+                    <a href="./index.html" tabindex="0"><img src="../img/logo.png" alt=""></a>
+                </div>
+
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li><a class="p-header" href="./index.html" tabindex="0">Home</a></li>
+                        <li><a class="p-header" id="browse-all" style="cursor: pointer;">Browse</a>
+                            <ul class="sub-menu">
+                                <li><a href="#" id="browse-toy" tabindex="0">Toy</a></li>
+                                <li><a href="#" id="browse-switch" tabindex="0">Switch</a></li>
+                                <li><a href="#" id="browse-adapter" tabindex="0">Adapter</a></li>
+                                <li><a href="#" id="browse-mount" tabindex="0">Mount</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="p-header" href="./about.html" tabindex="0">About</a></li>
+                        <li><a class="p-header" href="./contact.html" tabindex="0">Contact Us</a></li>
+                        <li>
+                            <div class="user-access">
+                                <a href="./register.html" tabindex="0">Register</a>
+                                <a href="./login.html" class="in" tabindex="0">Sign in</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
 
     <!-- Page Add Section Begin -->
     <section class="page-add">
@@ -95,46 +95,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p id='taxonomyError' style = "color:red;font-size:18px" ></p>
+                    <p id='taxonomyError' style="color:red;font-size:18px"></p>
                     <form id="taxonomyForm" onsubmit="updateProfile(this);return false;">
-                    <div class="col-lg-12">
-                            <h5>Type of Access</h5> <br>
-                            <label for="access1">Ability switch accessible<input type="checkbox" id="access1" name="access1" value="switch-acc"/></label><br>
-                            <label for="access2">Touch input<input type="checkbox" id="access2" name="access2" value="touch-input"/></label><br>
-                            <label for="access3">Eye tracking accessible<input type="checkbox" id="access3" name="access3" value="eye-acc"/></label><br>
+                        <div tabindex="0" class="col-lg-12">
+                            <fieldset>
+                            <legend><h5>Type of Access</h5></legend> <br>
+                            <label tabindex="0">Ability switch accessible<input tabindex="0" type="checkbox"
+                                    id="access1" name="access1" value="switch-acc" /></label><br>
+                            <label tabindex="0">Touch input<input tabindex="0" type="checkbox" id="access2"
+                                    name="access2" value="touch-input" /></label><br>
+                            <label tabindex="0">Eye tracking accessible<input tabindex="0" type="checkbox" id="access3"
+                                    name="access3" value="eye-acc" /></label><br>
+                            </fieldset>
                         </div>
                         <br>
-                        <div class="col-lg-12">
-                            <h5>Input Type</h5> <br>
-                            <label>Input features hard to manipulate<input type="checkbox" id="input1" name="input1" value="input-difficult"></label> <br>
-                            <label>Input features are small<input type="checkbox" id="input2" name="input2" value="input-small"></label>
+                        <div tabindex="0" class="col-lg-12">
+                            <fieldset>
+                            <legend><h5>Input Type</h5></legend> <br>
+                            <label tabindex="0">Input features hard to manipulate<input tabindex="0" type="checkbox"
+                                    id="input1" name="input1" value="input-difficult"></label> <br>
+                            <label tabindex="0">Input features are small<input tabindex="0" type="checkbox" id="input2"
+                                    name="input2" value="input-small"></label>
+                            </fieldset>
                         </div>
                         <br>
-                        <div class="col-lg-12">
-                            <h5>Light options</h5><br>
-                            <label>Lights bright/pulsating<input type="checkbox" id="light1" name="light1" value="lights-bright"></label><br>
-                            <label>Lights can be off<input type="checkbox" id="light2" name="light2" value="lights-off"></label>
+                        <div tabindex="0" class="col-lg-12">
+                            <fieldset>
+                            <legend><h5>Light options</h5></legend><br>
+                            <label tabindex="0">Lights bright/pulsating<input tabindex="0" type="checkbox" id="light1"
+                                    name="light1" value="lights-bright"></label><br>
+                            <label tabindex="0">Lights can be off<input tabindex="0" type="checkbox" id="light2"
+                                    name="light2" value="lights-off"></label>
+                            </fieldset>
                         </div>
                         <br>
-                        <div class="col-lg-12">
-                            <h5>Sound options</h5><br>
-                            <label>Sounds are loud<input type="checkbox" id="sound1" name="sound1" value="sound-loud"></label><br>
-                            <label>Sounds can be off<input type="checkbox" id="sound2" name="sound2" value="sound-off"></label>
+                        <div tabindex="0" class="col-lg-12">
+                            <fieldset>
+                            <legend><h5>Sound options</h5></legend><br>
+                            <label tabindex="0">Sounds are loud<input tabindex="0" type="checkbox" id="sound1"
+                                    name="sound1" value="sound-loud"></label><br>
+                            <label tabindex="0">Sounds can be off<input tabindex="0" type="checkbox" id="sound2"
+                                    name="sound2" value="sound-off"></label>
+                            </fieldset>
                         </div>
                         <br>
-                        <div class="col-lg-12">
-                            <h5>Other Features</h5><br>
-                            <label>Moves<input type="checkbox" id="feature1" name="feature1" value="Moves"></label><br>
-                            <label>Audio/Visual alternatives<input type="checkbox" id="feature2" name="feature2" value="av-alt"></label><br>
-                            <label>Textured<input type="checkbox" id="feature3" name="feature3" value="textured"></label>
+                        <div tabindex="0" class="col-lg-12">
+                            <fieldset>
+                            <legend><h5>Other Features</h5></legend><br>
+                            <label tabindex="0">Moves<input tabindex="0" type="checkbox" id="feature1" name="feature1"
+                                    value="Moves"></label><br>
+                            <label tabindex="0">Audio/Visual alternatives<input tabindex="0" type="checkbox"
+                                    id="feature2" name="feature2" value="av-alt"></label><br>
+                            <label tabindex="0">Textured<input tabindex="0" type="checkbox" id="feature3"
+                                    name="feature3" value="textured"></label>
+                            </fieldset>
                         </div>
                         <br>
-                        <div class="col-lg-12 text-left">
-                            <button type="submit" class="b-primary">Submit</button>
+                        <div tabindex="0" class="col-lg-12 text-left">
+                            <button tabindex="0" type="submit" class="b-primary">Submit</button>
                         </div>
                     </form>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
     <!-- profile Section End -->
@@ -148,8 +170,10 @@
                         <div class="single-footer-widget">
                             <h4>About us</h4>
                             <ul>
-                                <li>This is a project for the Accessibility Capstone course at the University of Washington.
-                                    Our team members are Dan Le, Nathan Chen, and Sonya Lao, with help from Prof. Anat Caspi</li>
+                                <li>This is a project for the Accessibility Capstone course at the University of
+                                    Washington.
+                                    Our team members are Dan Le, Nathan Chen, and Sonya Lao, with help from Prof. Anat
+                                    Caspi</li>
                             </ul>
                         </div>
                     </div>
@@ -158,7 +182,8 @@
                             <h4>Organization Partners</h4>
                             <ul>
                                 <li><a href="http://www.provail.org">Provail</a></li>
-                                <li><a href = "https://tcat.cs.washington.edu/">Taskar Center for Accessible Technology</a></li>
+                                <li><a href="https://tcat.cs.washington.edu/">Taskar Center for Accessible
+                                        Technology</a></li>
                             </ul>
                         </div>
                     </div>
@@ -174,14 +199,19 @@
             </div>
         </div>
 
-<div class="container text-center pt-5">
-                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-            </div>
+        <div class="container text-center pt-5">
+            <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                    target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
 
 
-		</div>
+        </div>
     </footer>
     <!-- Footer Section End -->
 
