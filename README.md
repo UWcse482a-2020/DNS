@@ -309,67 +309,66 @@ For the search bar, we would have liked to offer a more granular tag system. Com
 For each product page, we would have wanted to also include a “rating” system on a 5-point or 5-star scale. Paired with the reviews section, this could provide even more user-generated opinions for each product. For each product, we also wanted to have a “wishlist” button, where any registered user could save product links to a list in order to have them easily-accessible.
 Moving forward, we would also like to further refine the information provided on profiles and making the preferences-selecting form even smoother. 
 Finally, it would be a nice addition to have more pictures on the homepage to add some personality, as well as include more product videos to make product pages more informative.
-User Guide
-Search 
+# User Guide
+## Search
 To begin (or re-start) a search, navigate to the home page by clicking on the Logo on the top-left hand corner of the screen, or on the Home page tab in the header. 
-Search by Tags 
-Adding tags
+### Search by Tags 
+- Adding tags: 
 Select 0, 1, or many Product Type tags from the dropdown menu titled “Product Type.” 
 Select 0 or many Product Feature tags from the dropdown menu titled “Features”. 
 Add any keywords to search on to the search bar text input
-Removing tags
+- Removing tags: 
 To remove a tag, view the list of currently applied tags directly below the Product Type and Feature dropdown menus. Press the “x” on the same horizontal row as each tag (demarcated by bullet points) to remove the tag. 
-Search 
+- Search: 
 To perform a search, click the Search button that is located to the right of the Search Bar text input field 
-Search by Search Query 
-Input a phrase to search on in the Search Bar and click the Search button to run a search
-Error State: Unsuccessful Search 
-If a search bears no results, the user will encounter an error message stating “No matching products were found. Please try a different search.” For example, a search by tags for “Adapter” and “sound-off” will return no results. 
-Click the Search Again button from the error state to attempt another search, or restart the search directly by choosing new tags at the search section located at the top of the page.
-Browse 
-Browse all products
+### Search by Search Query 
+- Input a phrase to search on in the Search Bar and click the Search button to run a search
+### Error State: Unsuccessful Search 
+- If a search bears no results, the user will encounter an error message stating “No matching products were found. Please try a different search.” For example, a search by tags for “Adapter” and “sound-off” will return no results. 
+- Click the Search Again button from the error state to attempt another search, or restart the search directly by choosing new tags at the search section located at the top of the page.
+## Browse 
+### Browse all products
 Perform a tag-less search by clicking on the search button without any tags, or click the Browse tab in the header at any point. 
-Browse by product category 
+### Browse by product category 
 Hover over the Browse tab in the header, and click one of the categories that appears in the dropdown menu. 
-Browse page navigation 
-View the products that match your browse criteria by scrolling up and down the page. 
-Visit the individual Product Page for a product by clicking on the image or the title of the product.
-Perform another search
+### Browse page navigation 
+- View the products that match your browse criteria by scrolling up and down the page. 
+- Visit the individual Product Page for a product by clicking on the image or the title of the product.
+### Perform another search
 Generate another search by following the same steps to use the search bar located at the top of the Browse page
-Product Page
-Viewing product information
-Scroll up and down the page; description and features are at the top of the page and under Product Features, respectively. 
-Following external links to product suppliers 
+## Product Page
+### Viewing product information
+- Scroll up and down the page; description and features are at the top of the page and under Product Features, respectively. 
+- Following external links to product suppliers: 
 In the middle of the page, notice 3 different buttons. The availability of links to Purchase/Borrow/Make instructions is detailed above each respective button. If the button is green (can be hovered over and displays a mouse hand when doing so, focused on, doesn’t display a crossed out symbol when hovered on), a link can be followed by clicking the button. 
-Leaving a comment 
-Enter your review by typing into the text box under User Reviews. If not logged in to Facebook, press the Login to post button to Login to your Facebook account. If you are logged in, Press Post to add your comment to the page. *Adding a review requires a Facebook account. You must login before posting a review. 
-Viewing Video
+### Viewing Video
 If a video is available, it will be displayed right underneath the product image. Click on the play button on the video player to view the video.
-About
-View About Information
+### Leaving a comment 
+- Enter your review by typing into the text box under User Reviews. If not logged in to Facebook, press the Login to post button to Login to your Facebook account. If you are logged in, Press Post to add your comment to the page. *Adding a review requires a Facebook account. You must login before posting a review. 
+
+## View About Information
 View our “About” information by clicking on the “About” tab in the header of any page on the site. 
-Contact Us
-View Contact Information
+## View Contact Information
 View our “Contact Us” information by clicking on the “Contact Us” tab in the header of any page on the site. 
-Register/Login 
-Register 
-Start registration by clicking the Register tab in the header. 
+## Register/Login 
+### Register 
+- Start registration by clicking the Register tab in the header. 
 Fill in desired username, email, and password information. Click Submit once finished filling in information.
-Error state: If information is not improperly inputted, notice will pop up asking a user to “Please fill out this field.
-Successful registration will take the user to the Customize Profile page with notice stating “Registered Successfully. ” 
-Customize Profile
-Scroll up and down the page and click on 0 or many check boxes that match desired product features and preferences, then click the Submit button
-Successful form completion will take the user back to the Home page with a personalized message, and the user tags pre-filled underneath the search bar area
-Sign In 
-Enter username and password into the corresponding fields. Click Submit once finished filling in information.
-Error state: If information is not improperly inputted, notice will pop up asking a user to “Please fill out this field.
-Successful sign in will take the user back to the Home page with a personalized message. 
-Profile
-View Profile
-To view the profile, click the Profile tab in the header. 
+- Error state: If information is not improperly inputted, notice will pop up asking a user to “Please fill out this field.
+- Successful registration will take the user to the Customize Profile page with notice stating “Registered Successfully. ” 
+### Customize Profile
+- Scroll up and down the page and click on 0 or many check boxes that match desired product features and preferences, then click the Submit button
+- Successful form completion will take the user back to the Home page with a personalized message, and the user tags pre-filled underneath the search bar area
+### Sign In 
+- Enter username and password into the corresponding fields. Click Submit once finished filling in information.
+- Error state: If information is not improperly inputted, notice will pop up asking a user to “Please fill out this field.
+- Successful sign in will take the user back to the Home page with a personalized message. 
+## Profile
+### View Profile
+- To view the profile, click the Profile tab in the header. 
 Note that Profile tab will be unavailable unless signed in.
-View your Profile preferences and modify the checkboxes that are selected if desired
-When complete, click on the Update Profile button to save your changes
-Log Out
+- View your Profile preferences and modify the checkboxes that are selected if desired
+- When complete, click on the Update Profile button to save your changes
+## Log Out
 When signed in, there will be a Log Out link as the right-most clickable option of the menu bar. To log out of your account, click on the Log Out link
 The user will be redirected to a “Logging Out…” screen before being redirected to the home page
