@@ -106,6 +106,7 @@ The user's decision can be informed by other's stakeholder input throughout the 
 - MongoDB
 
 ## Use Cases
+### Situation 1
 *Before*: Caregiver is having trouble finding resources for accessible technologies and is mainly using amazon to buy and try out products.
 
 <img src="readme_assets/storyboard_1_before_1.png" width="50%">
@@ -116,8 +117,18 @@ The user's decision can be informed by other's stakeholder input throughout the 
 *After*: Caregiver can now find videos of products before purchasing and read reviews given by other people with similar needs. They can also find tutorials and useful links to other resources as well as reading reviews and interacting with other users who have used those products.
 
 <img src="readme_assets/storyboard_1_after.png" width="70%">
- 
-Flow Diagram
+
+### Situation 2
+*Before*: The therapist knows what type of product their client needs but doesn’t know what brand will be best or affordable.
+
+*After*: The therapist can give their clients a search page where the client can view their options in a single place and can browse for additional information at their leisure.
+
+### Situation 3
+*Before*: Person with disability is looking for products for themselves
+
+*After*: Our website will automatically add tags to match their conditions and suggest relevant products and resources. It will also have text to speech (and possibly speech to text for searching) to make it more accessible.
+
+## Flow Diagram
 <img src="readme_assets/control flow.png" width="50%">
 ## Database Model
 We used MongoDB, a NOSQL database, to store product information, users, and tags. This lets us perform queries on flexible data formats like csvs. 
