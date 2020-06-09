@@ -79,34 +79,36 @@
 
     <!-- Page Add Section Begin -->
     <section class="page-add">
-        <div class="container" style="padding-bottom: 50px;">
-
-            <!-- Search Bar -->
-            <div class="row" style="display: flex; flex-wrap: wrap;margin-right: -15px; margin-left: -15px; justify-content: center;">
-                    <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                        <p class="p-search">Product Type</p>
-                        <!-- audtocomplete="off" for firefox behavior -->
-                        <select id="tag-select" autocomplete="off" class='select-css'>
-                            <option disabled selected value> -- select an option -- </option>
-                        </select>
-                    </div>
-                    <div class="col-lg-3" style="display:inline-block" tabindex="0">
-                        <p class="p-search">Features</p>
-                        <select id="feature-select" autocomplete="off" class='select-css'>
-                            <option disabled selected value> -- select an option -- </option>
-                        </select>
-                    </div>
-                    <div class="col-lg-2" style="display:inline-block" tabindex="0">
-                        <p class="p-search">Search</p>
-                        <button id="search-btn" class='b-primary'>Search</button>
-                    </div>
-            </div>
-            <!-- Search Bar End -->
-
-            <div class='search-tag-container'>
-                <ul id='tags' style="font-size: 18px;"></ul>
-            </div>
+    <!-- Search Bar Begin -->
+    <div class="container" style="padding-bottom: 80px;">
+        <div class="row" style="display: flex; flex-wrap: wrap;margin-right: -15px; margin-left: -15px; justify-content: center;">
+                <div class="col-lg-3" style="display:inline-block" >
+                    <p class="p-search" tabindex="0">Product Type</p>
+                    <!-- audtocomplete="off" for firefox behavior -->
+                    <select id="tag-select" autocomplete="off" class='select-css' tabindex="0">
+                        <option disabled selected value> -- select an option -- </option>
+                    </select>
+                </div>
+                <div class="col-lg-3" style="display:inline-block" >
+                    <p class="p-search" tabindex="0">Features</p>
+                    <select id="feature-select" autocomplete="off" class='select-css' tabindex="0">
+                        <option disabled selected value> -- select an option -- </option>
+                    </select>
+                </div>
+                <div class="col-lg-3" style="display:inline-block">
+                    <p class="p-search" tabindex="0">Search Bar</p>
+                    <input class="search-input" type="text" id="search-bar" placeholder="Search on keyword..." autocomplete="off" tabindex="0">
+                </div>
+                <div class="col-lg-2" style="display:inline-block">
+                    <p class="p-search" tabindex="0">Search</p>
+                    <button id="search-btn" class='b-primary' tabindex="0">Search</button>
+                </div>
         </div>
+        <div class='search-tag-container'>
+            <ul id='tags' style="font-size: 18px;"></ul>
+        </div>
+    </div>
+    <!-- Search Bar End -->
     
         <div class="container">
             <div class="row">
