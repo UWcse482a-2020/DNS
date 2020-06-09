@@ -110,7 +110,9 @@ The user's decision can be informed by other's stakeholder input throughout the 
 *Before*: Caregiver is having trouble finding resources for accessible technologies and is mainly using amazon to buy and try out products.
 
 <img src="readme_assets/storyboard_1_before_1.png" width="35%">
+
 <img src="readme_assets/storyboard_1_before_2.png" width="35%">
+
 <img src="readme_assets/storyboard_1_before_3.png" width="35%">
 
 *After*: Caregiver can now find videos of products before purchasing and read reviews given by other people with similar needs. They can also find tutorials and useful links to other resources as well as reading reviews and interacting with other users who have used those products.
