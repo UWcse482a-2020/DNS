@@ -157,17 +157,23 @@ Our website is built on a MVC framework (model, view, controller) which is consi
 The primary constraint for the development of the ATLL was time: the University of Washington operates on a 10-week quarter system. We spent approximately 4 weeks designing the project and 6 weeks implementing the library itself. 
 
 All team members were also unfamiliar with the assistive tech space and had to spend some time speaking with needs-experts in order to better understand issues faced by the community, alternate solutions to our project that currently exist, and our own positionality in undertaking this project in collaboration with assistive tech stakeholders.
+
 Moreover, this project was undertaken with just 3 team members with limited design experience and varying degrees of familiarity with full-stack web development. 
+
 Finally, because our project is completely unfunded, we are not paying for premium hosting and the site may be unable to handle the high amounts of traffic for which it is designed. 
-User Tests and  Results 
+
+# User Tests and Results 
 For definition of Goals, see “Goals” section above.
-GOAL #1
-Task
+
+## GOAL #1
+### Task
 First, we will ask the user to start at the home page and complete a search. At this stage, we can observe whether or not the usage of our search and tagging interface is intuitive and clear to users. Then, for each clicked-on product, we will ask if: 
 This product satisfied the parameters of my query 
 This product did not satisfy the parameters of my query 
 Additionally, we will ask the follow up question: “Are there any not-provided search tags you would like to add to the search interface: __________ [fill in the blank]”
-Data
+
+### Data
+
 On average, our users spent 8-10 minutes on this task.
 User
 # Products Clicked On
@@ -189,27 +195,36 @@ Total:
 8
 % of products clicked on where “product satisfied the parameters of my query” : 100% 
 
-Fill In the Blank Responses
-Feature tags should be more descriptive and clear in their wording 
-An “age range” tag would be useful
-Not all tags apply for all product types
-“Eye-acc” looks a lot like AAC, consider writing out the full word “accessibility”
-Additional tags: vibration, size, carryable vs. not carryable, requires outlet?, requires fine motor dexterity?, resistant vs not resistant, level of motor movement needed?
-Separate category filter for cognitive age
-For the “texture” tag, maybe distinguish between soft plush texture vs plastic
-Resulting Actions Taken
+### Fill In the Blank Responses 
+- Feature tags should be more descriptive and clear in their wording 
+- An “age range” tag would be useful
+- Not all tags apply for all product types
+- “Eye-acc” looks a lot like AAC, consider writing out the full word “accessibility”
+- Additional tags: vibration, size, carryable vs. not carryable, requires outlet?, requires fine motor dexterity?, resistant vs not resistant, level of motor movement needed?
+- Separate category filter for cognitive age
+- For the “texture” tag, maybe distinguish between soft plush texture vs plastic
+
+### Resulting Actions Taken
+
 From Goal 1, we learned that the wording of our search tags was confusing and not descriptive enough for some users. As such, we updated the wording to be clearer by changing the strings associated with each tag when we display the search bar in HTML. 
+
 There was also an overall influx of suggested new tags to add to the search interface for more complex searches. Based on Anat’s feedback, we moved forward with adding text-based keyword searching on the product description column to further improve the granularity of the search experience. We also considered adding an additional dropdown to filter by the cognitive age required to use each product. Ultimately, we did not add the search-by-age feature because the associated data was subjectively filled in by us for testing purposes, and was therefore not highly reliable as the basis for an entirely new dropdown. 
-GOAL #2
-Task
+
+## GOAL #2
+### Task
+
 Next, we asked users to view product pages based on their query. After viewing each product page, they answered the following question(s):
-“Based on the information provided on the page, this product is: 
-Accessible to me based on my needs
-Inaccessible to me based on my needs
-I cannot tell because some information is missing 
-If previous answer was c), the information missing was as follows: _____ [fill in the blank]”
-Data
-On average, our users spent 3 minutes reading each product page
+
+*“Based on the information provided on the page, this product is:*
+- *Accessible to me based on my needs*
+- *Inaccessible to me based on my needs*
+- *I cannot tell because some information is missing*
+
+*If previous answer was c), the information missing was as follows: _____ [fill in the blank]”*
+
+### Data
+On average, our users spent 3 minutes reading each product page.
+
 User
 # Products Viewed
 # of “a)” Responses
@@ -242,23 +257,35 @@ Total:
 1
 % of viewed product pages with “a” or “b” response: 85.7%
 
-“C” Fill in the Blank Responses:
-Product make/material/dimensions information 
-If the products make noise or are speech compatible, what languages are supported?
-Operating and usage instructions 
-Resulting Actions Taken
+*“C” Fill in the Blank Responses* 
+
+- Product make/material/dimensions information 
+- If the products make noise or are speech compatible, what languages are supported?
+- Operating and usage instructions 
+
+### Resulting Actions Taken
+
 Our product pages at the time did not feature substantive information regarding each product’s technical specifications, such as the material they’re made of, their dimensions, etc. As such, we added a new section to the product page titled “Product Technical Specifications” and inserted a temporary notice stating “Coming Soon - Thank You For Your Patience!” as that information was not actually provided to us through the CSV data. However, this notice will indicate to future developers that such information is a necessary addition.
-GOAL #3
-Question
+
+## GOAL #3
+### Question
+
 More reviews read on a specific product page will increase the user’s confidence in making a decision about the product.
-Task
+
+### Task
+
 In order to test the utility of user reviews, we asked testers to view three different products and complete the three following metrics:
-Likert Scale asking how confident the user is in making a decision about a product before reading the reviews
-Likert Scale asking how confident the user is in making a decision about a product after reading the reviews
-Likert scales: “Not Confident,” “Somewhat Not Confident,” “Neither Confident Or Unconfident,” “Somewhat Confident,” “Very Confident” 
+
+- *Likert Scale asking how confident the user is in making a decision about a product before reading the reviews*
+- *Likert Scale asking how confident the user is in making a decision about a product after reading the reviews*
+
+*Likert scales: “Not Confident,” “Somewhat Not Confident,” “Neither Confident Or Unconfident,” “Somewhat Confident,” “Very Confident”*
+
 Our three products featured 0 reviews, 3 good reviews, and 6 reviews (3 good 3 bad) respectively.
-Data
+
+### Data
 On average, our users spent 15 minutes to complete the entire task
+
 User
 0 Reviews before
 0 Reviews after
@@ -296,19 +323,28 @@ Somewhat Confident
 Somewhat Confident
 
 
-Resulting Actions Taken
+### Resulting Actions Taken
 The main improvement that we can implemented for the review section was to make the review section more visible. We added a hyperlink at the top of the product page that that encourages users to leave reviews, redirecting the user screen to the review section for easy access upon being clicked.
-GENERAL ADDITIONS AND BUGFIXES
+
+### GENERAL ADDITIONS AND BUGFIXES
 At the time of user testing, we encountered a bug with the Facebook comments plugin that prevented the comment section from being dynamically loaded on the public-facing URL. We fixed this bug by dynamically loading the plugin directly in product page HTML file, rather than through a script loaded in through a separate file.
+
 Testers found the language in the “user preferences / taxonomy” form to be slightly confusing. We simply changed the text in the form to be more specific. We also added a way for users to change their preferences, and to logout of their accounts.
+
 Some testers indicated that they would like to learn more information about the library’s mission and how to contact the organizers of the site. We added new “About” and “Contact Us” pages filled with relevant static information, and hooked them up to the navigation bar in the website’s header.
+
 Finally, some tab-able elements were redundant, such as containers that are highlight-able even when their individual elements are also highlight-able. These elements could have been misleading to users who think they can interact/click on them even when they can’t. We solved this issue by removing certain element tags from extraneous elements to take away their highlight-ability. 
-Conclusion and Future Directions
+
+# Conclusion and Future Directions
 There are a couple of features we would like to add had we not been constrained. 
+
 For the search bar, we would have liked to offer a more granular tag system. Compared to sites like EnablingDevices.com, our tags are not as specific or varied. We would also have liked to add cognitive age as a search parameter if we had time. Finally, it would be useful to have the ability to negate features, which we do not currently support.
+
 For each product page, we would have wanted to also include a “rating” system on a 5-point or 5-star scale. Paired with the reviews section, this could provide even more user-generated opinions for each product. For each product, we also wanted to have a “wishlist” button, where any registered user could save product links to a list in order to have them easily-accessible.
+
 Moving forward, we would also like to further refine the information provided on profiles and making the preferences-selecting form even smoother. 
 Finally, it would be a nice addition to have more pictures on the homepage to add some personality, as well as include more product videos to make product pages more informative.
+
 User Guide
 Search 
 To begin (or re-start) a search, navigate to the home page by clicking on the Logo on the top-left hand corner of the screen, or on the Home page tab in the header. 
