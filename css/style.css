@@ -2173,7 +2173,8 @@ ol {
 	.inner-header .main-menu {
 		/* float: right;
 		margin-right: 238px; */
-		text-align: center
+		text-align: center; 
+		margin-right: 45px;
 	}
 }
 
